@@ -1,0 +1,12 @@
+// mostly copy-pasted from: https://github.com/avaya-dux/design-portal/blob/main/.github/renovate.json5
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:base",
+    "group:allNonMajor", // batch non-majors into one PR
+    ":semanticCommits", // nicer commit messages
+  ],
+  assignees: ["Barbacoa08"],
+  reviewers: ["Barbacoa08"],
+  schedule: ["on monday before 5am"],
+}
