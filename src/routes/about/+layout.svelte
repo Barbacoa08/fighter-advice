@@ -1,3 +1,3 @@
-<h4>About</h4>
+<h2>About</h2>
 
 <slot />

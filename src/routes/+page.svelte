@@ -7,12 +7,12 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<h1>Welcome to SvelteKit</h1>
+<h2>Welcome to SvelteKit</h2>
 <p>
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
 
-<h2>Routing test</h2>
+<h3>Routing test</h3>
 
 <p>Go to the <a href="/about">About page</a></p>
 
