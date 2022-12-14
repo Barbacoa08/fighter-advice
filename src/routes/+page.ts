@@ -4,7 +4,7 @@ export interface PageData {
   user: string;
 }
 
-export const load: PageLoad = async ({ fetch }) => {
+export const load: PageLoad = async ({ fetch, setHeaders }) => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
   const user = await res.json();
   /* {
@@ -27,6 +27,11 @@ export const load: PageLoad = async ({ fetch }) => {
       bs: 'harness real-time e-markets'
     }
   } */
+
+  // TODO: dangerous, probably don't want to keep
+  setHeaders({
+    "Cache-Control": "max-age=60", // 60 seconds, or 1 minute
+  });
 
   return {
     user: user.username || "Nak Muay",
