@@ -3,6 +3,8 @@
   import type { PageData } from "./+page";
 
   export let data: PageData;
+
+  $: ({ user } = data);
 </script>
 
 <svelte:head>
@@ -12,7 +14,7 @@
 
 <h2>
   Welcome to BarbaJoe's Fighter Advice:
-  <span class="username">{data.user}</span>
+  <span class="username">{user}</span>
 </h2>
 <p>
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
