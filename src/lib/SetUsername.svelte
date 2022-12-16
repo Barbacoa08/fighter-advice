@@ -39,5 +39,5 @@
 
 <div>
   <button on:click={handleGet}>Pull `locals.user.username`</button>
-  <aside>Sets `temp` var to pulled value</aside>
+  <aside>Sets `updatedUsername` var to pulled value</aside>
 </div>

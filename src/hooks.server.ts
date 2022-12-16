@@ -5,6 +5,5 @@ export const handle: Handle = async ({ event, resolve }) => {
   const sessionid = event.cookies.get("sessionid") || "1"; // TODO: add sessionid to cookies
   event.locals.user = await getUserInformation(sessionid);
 
-  const response = await resolve(event);
-  return response;
+  return await resolve(event);
 };
