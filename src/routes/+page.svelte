@@ -1,10 +1,12 @@
 <script lang="ts">
-  import Test from "$lib/Test.svelte";
+  import SetUsername from "$lib/SetUsername.svelte";
   import type { PageData } from "./+page.server";
 
   export let data: PageData;
 
-  $: ({ user } = data);
+  $: ({
+    user: { username },
+  } = data);
 </script>
 
 <svelte:head>
@@ -14,8 +16,9 @@
 
 <h2>
   Welcome to BarbaJoe's Fighter Advice:
-  <span class="username">{user.username}</span>
+  <span class="username">{username}</span>
 </h2>
+
 <p>
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
@@ -24,7 +27,7 @@
 
 <p>Go to the <a href="/about">About page</a></p>
 
-<Test />
+<SetUsername {username} />
 
 <style>
   span.username {
