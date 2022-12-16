@@ -1,4 +1,4 @@
-import type { FighterUser } from "src/hooks.server";
+import type { FighterUser } from "$types/FighterUser";
 import type { PageLoad } from "./$types";
 
 export interface PageData {
