@@ -1,6 +1,6 @@
 <script lang="ts">
   import Test from "$lib/Test.svelte";
-  import type { PageData } from "./+page";
+  import type { PageData } from "./+page.server";
 
   export let data: PageData;
 
@@ -14,7 +14,7 @@
 
 <h2>
   Welcome to BarbaJoe's Fighter Advice:
-  <span class="username">{user}</span>
+  <span class="username">{user.username}</span>
 </h2>
 <p>
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
