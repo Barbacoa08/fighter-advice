@@ -34,6 +34,7 @@
     Be redirect to homepage after attempting to go to
     <a href="/user">User page</a> when not "allowed"
   </li>
+  <li>Go to the <a href="/not-found">Not Found page</a></li>
 </ul>
 
 <style>
