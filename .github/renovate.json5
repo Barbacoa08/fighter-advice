@@ -1,6 +1,5 @@
-// mostly copy-pasted from: https://github.com/avaya-dux/design-portal/blob/main/.github/renovate.json5
+// copy-pasted from: https://github.com/sveltejs/vite-plugin-svelte/blob/main/.github/renovate.json5
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
     "config:base",
     "schedule:weekly", // each monday
@@ -9,8 +8,10 @@
   ],
   assignees: ["Barbacoa08"],
   reviewers: ["Barbacoa08"],
-  rangeStrategy: "bump",
   labels: ["dependencies"],
+  pin: false,
+  rangeStrategy: "bump",
+  node: false,
   packageRules: [
     {
       matchDepTypes: ["peerDependencies"],
