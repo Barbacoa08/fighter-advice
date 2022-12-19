@@ -1,21 +1,12 @@
 // copy-pasted from: https://github.com/sveltejs/vite-plugin-svelte/blob/main/.github/renovate.json5
 {
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
     "config:base",
-    "schedule:weekly", // each monday
     "group:allNonMajor", // batch non-majors into one PR
     ":semanticCommits", // nicer commit messages
   ],
   assignees: ["Barbacoa08"],
   reviewers: ["Barbacoa08"],
-  labels: ["dependencies"],
-  pin: false,
-  rangeStrategy: "bump",
-  node: false,
-  packageRules: [
-    {
-      matchDepTypes: ["peerDependencies"],
-      enabled: false,
-    },
-  ],
+  schedule: ["on monday before 5am"],
 }
