@@ -1,31 +1,60 @@
-<h2>Fake Form</h2>
+<script lang="ts">
+  import { enhance } from "$app/forms";
+  import type { FormResponse } from "./+page.server";
 
-<form method="post">
-  <label>Name <input required type="text" name="name" /></label>
+  export let form: FormResponse;
 
-  <label>Email <input required type="email" name="email" /></label>
+  $: console.info("form", form);
+</script>
 
-  <label>Message <textarea required name="message" /></label>
+<div class="fake-form-wrapper">
+  <h2>Fake Form</h2>
 
-  <button type="submit">Submit</button>
-</form>
+  {#if form?.message}
+    <div>
+      <h3 class="submission-repsonse">Submission repsonse:</h3>
 
-<p>Return <a href="/">home</a>?</p>
+      <p>{form.message}</p>
+    </div>
+  {:else}
+    <div>
+      <h3 class="submission-repsonse">Form unsubmitted</h3>
+
+      <p>&nbsp;</p>
+    </div>
+  {/if}
+
+  <form method="post" use:enhance>
+    <label>Name <input required type="text" name="name" /></label>
+
+    <label>Email <input required type="email" name="email" /></label>
+
+    <label>Message <textarea required name="message" /></label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p>Return <a href="/">home</a>?</p>
+</div>
 
 <style>
-  h2 {
-    /* text-align: center; */
+  div.fake-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
     max-width: 400px;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin: 0;
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-
-    max-width: 400px;
-    margin: 0 auto;
+    gap: 1rem;
   }
 
   label {
@@ -36,5 +65,9 @@
 
   button[type="submit"] {
     font-size: var(--font-size-base);
+  }
+
+  .submission-repsonse {
+    font-weight: bold;
   }
 </style>
