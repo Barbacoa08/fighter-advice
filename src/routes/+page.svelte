@@ -35,6 +35,7 @@
     <a href="/user">User page</a> when not "allowed"
   </li>
   <li>Go to the <a href="/not-found">Not Found page</a></li>
+  <li>Go to the <a href="/fake-form">Fake Form page</a></li>
 </ul>
 
 <style>
