@@ -10,19 +10,17 @@
 <div class="fake-form-wrapper">
   <h2>Fake Form</h2>
 
-  {#if form?.message}
-    <div>
-      <h3 class="submission-repsonse">Submission repsonse:</h3>
+  <div>
+    <h3 class="submission-repsonse">Submission repsonse:</h3>
 
-      <p>{form.message}</p>
-    </div>
-  {:else}
-    <div>
-      <h3 class="submission-repsonse">Form unsubmitted</h3>
-
-      <p>&nbsp;</p>
-    </div>
-  {/if}
+    <p class="transition">
+      {#if form?.message}
+        {form.message}
+      {:else}
+        &nbsp;
+      {/if}
+    </p>
+  </div>
 
   <form method="post" use:enhance>
     <label>Name <input required type="text" name="name" /></label>
