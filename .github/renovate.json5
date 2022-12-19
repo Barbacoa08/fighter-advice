@@ -6,7 +6,8 @@
     "group:allNonMajor", // batch non-majors into one PR
     ":semanticCommits", // nicer commit messages
   ],
+  schedule: ["on monday before 5am"],
+  rangeStrategy: "pin", // pin dependencies
   assignees: ["Barbacoa08"],
   reviewers: ["Barbacoa08"],
-  schedule: ["on monday before 5am"],
 }
