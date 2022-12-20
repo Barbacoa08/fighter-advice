@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser, dev } from "$app/environment";
   import SetUsername from "$lib/SetUsername.svelte";
   import type { PageData } from "./+page.server";
 
@@ -29,13 +30,15 @@
 
 <ul>
   <li>Go to the <a href="/about">About page</a></li>
-  <li>Go "allowed" <a href="/user?allowed=true">User page</a></li>
-  <li>
-    Be redirect to homepage after attempting to go to
-    <a href="/user">User page</a> when not "allowed"
-  </li>
-  <li>Go to the <a href="/not-found">Not Found page</a></li>
-  <li>Go to the <a href="/fake-form">Fake Form page</a></li>
+  {#if dev && browser}
+    <li>Go "allowed" <a href="/user?allowed=true">User page</a></li>
+    <li>
+      Be redirect to homepage after attempting to go to
+      <a href="/user">User page</a> when not "allowed"
+    </li>
+    <li>Go to the <a href="/not-found">Not Found page</a></li>
+    <li>Go to the <a href="/fake-form">Fake Form page</a></li>
+  {/if}
 </ul>
 
 <style>

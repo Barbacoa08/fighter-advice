@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser, dev } from "$app/environment";
   import { enhance } from "$app/forms";
   import { fade } from "svelte/transition";
 
@@ -19,7 +20,9 @@
 </script>
 
 <div class="fake-form-wrapper">
-  <h2>Fake Form</h2>
+  <h2>
+    Fake Form {#if dev && browser}HELLO JOE{/if}
+  </h2>
 
   <form method="post" use:enhance>
     <label>Name <input required type="text" name="name" /></label>
