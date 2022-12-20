@@ -1,4 +1,4 @@
-import type { FighterUser } from "src/types/FighterUser";
+import type { FighterUser } from "$types/FighterUser";
 
 export const getUserInformation = async (sessionid: string) => {
   const res = await fetch(
