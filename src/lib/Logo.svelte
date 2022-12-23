@@ -1,9 +1,11 @@
 <script lang="ts">
   import logoBlack from "$lib/assets/mongkong-logo-black.webp";
   import logoWhite from "$lib/assets/mongkong-logo-white.webp";
+
+  export let width = 50;
 </script>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset={logoWhite} />
-  <img width="50" src={logoBlack} alt="Mongkong Logo" />
+  <img width={width} src={logoBlack} alt="Mongkong Logo" />
 </picture>
