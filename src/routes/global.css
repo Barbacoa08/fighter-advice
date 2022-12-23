@@ -9,9 +9,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: hsl(0, 100%, 95%);
-    --color-bg: hsl(198, 100%, 11%);
-
     --color-link-text: #86a0ee;
+    --color-bg: hsl(198, 100%, 11%);
   }
 }
 
