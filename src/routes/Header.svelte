@@ -1,35 +1,28 @@
-<header>
-  <h1 class="text-gradient"><a href="/">Fighter Advice</a></h1>
-</header>
+<script lang="ts">
+  import { Header, HeaderNav, HeaderNavItem } from "agnostic-svelte";
+
+  import { page } from "$app/stores";
+  import { Logo } from "$lib";
+
+  $: isHome = $page.url.pathname === "/";
+  $: isAbout = $page.url.pathname === "/about";
+</script>
+
+<Header>
+  <div slot="logoleft"><Logo /></div>
+
+  <HeaderNav>
+    <HeaderNavItem>
+      <a href="/" class:active={isHome}>Home</a>
+    </HeaderNavItem>
+    <HeaderNavItem>
+      <a href="/about" class:active={isAbout}>About</a>
+    </HeaderNavItem>
+  </HeaderNav>
+</Header>
 
 <style>
-  :root {
-    --image-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-  }
-  header h1 {
-    margin-bottom: 0;
-    text-align: center;
-  }
-
-  .text-gradient {
-    font-weight: 900;
-    background-image: var(--image-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 100% 200%;
-    background-position-y: 100%;
-    border-radius: 0.4rem;
-    animation: pulse 4s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      background-position-y: 0%;
-    }
-    50% {
-      background-position-y: 80%;
-    }
+  .active {
+    color: var(--color-link-text-active);
   }
 </style>

@@ -3,14 +3,32 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<h2>Welcome to BarbaJoe's Fighter Advice</h2>
+<h2>Welcome to barbajoe's <span class="text-gradient">Fighter Advice</span></h2>
 
 <p>
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
 
-<h3>Routing test</h3>
+<style>
+  .text-gradient {
+    font-weight: 900;
+    background-image: linear-gradient(0deg, #4f39fa, #da62c4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
 
-<ul>
-  <li>Go to the <a href="/about">About page</a></li>
-</ul>
+  @keyframes pulse {
+    0%,
+    100% {
+      background-position-y: 0%;
+    }
+    50% {
+      background-position-y: 80%;
+    }
+  }
+</style>
