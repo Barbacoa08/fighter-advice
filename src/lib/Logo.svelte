@@ -7,5 +7,5 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset={logoWhite} />
-  <img width={width} src={logoBlack} alt="Mongkong Logo" />
+  <img {width} src={logoBlack} alt="Mongkong Logo" />
 </picture>

@@ -3,7 +3,7 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<h2>Welcome to barbajoe's <span class="text-gradient">Fighter Advice</span></h2>
+<h1>Welcome to barbajoe's <span class="text-gradient">Fighter Advice</span></h1>
 
 <p>
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
