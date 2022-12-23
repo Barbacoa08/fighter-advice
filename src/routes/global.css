@@ -2,11 +2,14 @@
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
   --font-size-xl: clamp(1.44rem, 1vw + 1.6rem, 2rem);
+
+  --color-link-text: #0000ee;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: hsl(0, 100%, 95%);
+    --color-link-text: #86a0ee;
     --color-bg: hsl(198, 100%, 11%);
   }
 }
@@ -46,16 +49,7 @@ code {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-link-text: #86a0ee;
-    --color-link-text-active: #87e7ee;
-  }
-
-  a {
-    color: var(--color-link-text);
-  }
-  a:visited {
-    color: var(--color-link-text-active);
-  }
+a,
+a:visited {
+  color: var(--color-link-text);
 }
