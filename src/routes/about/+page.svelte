@@ -2,7 +2,13 @@
   <title>FA: About</title>
 </svelte:head>
 
-<h3>About Fighter Advice</h3>
+<h2>About Fighter Advice</h2>
+
 <p>
-  Return <a href="/">home</a>
+  As a Nak Muay, there are a <strong>ton</strong> or amazing resources out there!
+  But I've found it difficult to keep all of those resources organized and easy to
+  access. So I decided to create Fighter Advice as a central place to store all of
+  my favorite resources.
 </p>
+
+<p>I hope you find Fighter Advice useful!</p>

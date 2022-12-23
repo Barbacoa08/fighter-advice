@@ -1,5 +1,5 @@
 <header>
-  <h1 class="text-gradient">Fighter Advice</h1>
+  <h1 class="text-gradient"><a href="/">Fighter Advice</a></h1>
 </header>
 
 <style>
