@@ -2,7 +2,7 @@
   <title>FA: About</title>
 </svelte:head>
 
-<h2>About Fighter Advice</h2>
+<h1>About Fighter Advice</h1>
 
 <p>
   As a Nak Muay, there are a <strong>ton</strong> or amazing resources out there!
