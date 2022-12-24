@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { Logo } from "$lib";
+  import { Logo } from "$lib/components";
 
   $: isHome = $page.url.pathname === "/";
   $: isAbout = $page.url.pathname === "/about";

@@ -1,12 +1,8 @@
 <script lang="ts">
-  import TextGradient from "$lib/components/TextGradient.svelte";
-  import Scale from "$lib/icons/Scale.svelte";
+  import { dev } from "$app/environment";
 
-  import type { PageData } from "./+page.server";
-
-  export let data: PageData;
-
-  $: ({ links } = data);
+  import { TextGradient } from "$lib/components";
+  import { Bowl, Checklist, Notebook, Scale } from "$lib/icons";
 </script>
 
 <svelte:head>
@@ -22,11 +18,61 @@
 </p>
 
 <ul class="homepage-links">
-  {#each links as { href, text } (href)}
+  <li>
+    <a href="/nutrition">
+      <Bowl class="svg-position" /> Nutrition (Coming Soon)
+    </a>
+  </li>
+
+  <li>
+    <a href="/weight-management">
+      <Scale class="svg-position" /> Weight Management (Coming Soon)
+    </a>
+  </li>
+
+  <li>
+    <a href="/training-plans">
+      <Notebook class="svg-position" /> Training Plans (Coming Soon)
+    </a>
+  </li>
+
+  <li>
+    <a href="/training-day">
+      <Checklist class="svg-position" /> A Training Day (Coming Soon)
+    </a>
+  </li>
+
+  <li>
+    <a href="/fight-week">
+      <Bowl class="svg-position" /> Fight Week (Coming Soon)
+    </a>
+  </li>
+
+  <li>
+    <a href="/fight-day">
+      <Bowl class="svg-position" /> Fight Day (Coming Soon)
+    </a>
+  </li>
+
+  <li>
+    <a href="/motivations">
+      <Bowl class="svg-position" /> Motivation (Coming Soon)
+    </a>
+  </li>
+
+  <li>
+    <a href="/who-to-follow">
+      <Bowl class="svg-position" /> Who to Follow (Coming Soon)
+    </a>
+  </li>
+
+  {#if dev}
     <li>
-      <a {href}><Scale class="svg-position" /> {text}</a>
+      <a href="/my-stuff">
+        <Bowl class="svg-position" /> My Stuff (In Development)
+      </a>
     </li>
-  {/each}
+  {/if}
 </ul>
 
 <style>
