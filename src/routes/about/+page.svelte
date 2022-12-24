@@ -1,8 +1,12 @@
+<script lang="ts">
+  import { TextGradient } from "$lib/components";
+</script>
+
 <svelte:head>
   <title>FA: About</title>
 </svelte:head>
 
-<h1>About Fighter Advice</h1>
+<h1>About <TextGradient>Fighter Advice</TextGradient></h1>
 
 <p>
   As a Nak Muay, there are a <strong>ton</strong> or amazing resources out there!
