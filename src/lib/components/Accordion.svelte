@@ -17,7 +17,7 @@
 
 <style>
   .accordion {
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color-gray);
     border-radius: 4px;
     margin-bottom: 1rem;
   }
@@ -34,7 +34,7 @@
 
   .active.accordion-header,
   .accordion-header:hover {
-    background-color: #ccc;
+    background-color: var(--border-color-gray);
   }
 
   .accordion-panel {
