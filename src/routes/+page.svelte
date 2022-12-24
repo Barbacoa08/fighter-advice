@@ -1,23 +1,15 @@
 <script lang="ts">
-  import { dev } from "$app/environment";
+  import { Icon, TextGradient } from "$lib/components";
+  import type { PageData } from "./+page.server";
 
-  import { TextGradient } from "$lib/components";
-  import {
-    Bowl,
-    CalendarHeart,
-    Checklist,
-    Me,
-    Motivation,
-    Notebook,
-    People,
-    Scale,
-    Sleep,
-  } from "$lib/icons";
+  export let data: PageData;
+
+  $: ({ links } = data);
 </script>
 
 <svelte:head>
   <title>Fighter Advice</title>
-  <meta name="description" content="Svelte demo app" />
+  <meta name="description" content="barbajoe's Fighter Advice homepage" />
 </svelte:head>
 
 <h1>Welcome to barbajoe's <TextGradient>Fighter Advice</TextGradient></h1>
@@ -28,61 +20,14 @@
 </p>
 
 <ul class="homepage-links">
-  <li>
-    <a href="/nutrition">
-      <Bowl class="svg-position" /> Nutrition (In Progress)
-    </a>
-  </li>
-
-  <li>
-    <a href="/weight-management">
-      <Scale class="svg-position" /> Weight Management (In Progress)
-    </a>
-  </li>
-
-  <li>
-    <a href="/training-plans">
-      <Notebook class="svg-position" /> Training Plans (In Progress)
-    </a>
-  </li>
-
-  <li>
-    <a href="/training-day">
-      <Checklist class="svg-position" /> A Training Day (In Progress)
-    </a>
-  </li>
-
-  <li>
-    <a href="/fight-week">
-      <Sleep class="svg-position" /> Fight Week (In Progress)
-    </a>
-  </li>
-
-  <li>
-    <a href="/fight-day">
-      <CalendarHeart class="svg-position" /> Fight Day (In Progress)
-    </a>
-  </li>
-
-  <li>
-    <a href="/motivations">
-      <Motivation class="svg-position" /> Motivation (In Progress)
-    </a>
-  </li>
-
-  <li>
-    <a href="/who-to-follow">
-      <People class="svg-position" /> Who to Follow (In Progress)
-    </a>
-  </li>
-
-  {#if dev}
+  {#each links as { href, icon, text, completed } (href)}
     <li>
-      <a href="/my-stuff">
-        <Me class="svg-position" /> My Stuff (In Development)
+      <a {href}>
+        <Icon {icon} />
+        <span>{text} {completed === false ? "(In Progress)" : ""}</span>
       </a>
     </li>
-  {/if}
+  {/each}
 </ul>
 
 <style>

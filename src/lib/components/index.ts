@@ -1,3 +1,6 @@
+import Icon from "./Icon.svelte";
+export { Icon };
+
 import Logo from "./Logo.svelte";
 export { Logo };
 
