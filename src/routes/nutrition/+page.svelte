@@ -120,12 +120,32 @@
   </ul>
 </Accordion>
 
+<Accordion>
+  <div slot="header">Fight Week Weight Cut Manual</div>
+
+  <p>
+    <a
+      href="https://drive.google.com/file/d/1y43TXbQSIMSszrYNAlToa68dzGUouU2O/view"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Link to source
+    </a>
+    (
+    <a href="https://www.instagram.com/condition.nutrition/">
+      @condition.nutrition
+    </a> ), PDF contains &darr;:
+  </p>
+
+  <ul>
+    <li>Lots of "<i>do not</i>" (unsafe) weight cut methods</li>
+    <li>Lots of "<i>do</i>" (safe) weight cut methods</li>
+    <li>Advice on foods to eat directly after weigh in</li>
+    <li>Advice on foods and meals for healthy week-of eating</li>
+  </ul>
+</Accordion>
+
 <!--
-  - [Fight Week Weight Cut Manual](https://drive.google.com/file/d/1y43TXbQSIMSszrYNAlToa68dzGUouU2O/view)
-    - Lots of “DO NOT” (unsafe) methods
-    - Lots of “DO” (safe) methods
-    - Advice on foods to eat directly after weigh in
-    - Advice on foods and meals for healthy week-of eating
 - [Intermittent Fasting (16|8 strategy)](https://www.healthline.com/nutrition/16-8-intermittent-fasting#basics)
     - Once or twice a week, fast for 16hrs, eat for 8hrs
         - For those 16hrs, only zero-calorie drinks (water, tea, plain coffee)
