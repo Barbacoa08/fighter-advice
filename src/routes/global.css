@@ -4,20 +4,15 @@
   --font-size-xl: clamp(1.44rem, 1vw + 1.6rem, 2rem);
 
   --color-link-text: #0000ee;
+  --color-text: hsl(12, 5%, 4%);
+  --color-bg: hsl(10, 21%, 95%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: hsl(0, 100%, 95%);
     --color-link-text: #86a0ee;
+    --color-text: hsl(0, 100%, 95%);
     --color-bg: hsl(198, 100%, 11%);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-text: hsl(12, 5%, 4%);
-    --color-bg: hsl(10, 21%, 95%);
   }
 }
 
