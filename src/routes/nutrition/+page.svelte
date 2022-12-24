@@ -145,20 +145,83 @@
   </ul>
 </Accordion>
 
-<!--
-- [Intermittent Fasting (16|8 strategy)](https://www.healthline.com/nutrition/16-8-intermittent-fasting#basics)
-    - Once or twice a week, fast for 16hrs, eat for 8hrs
-        - For those 16hrs, only zero-calorie drinks (water, tea, plain coffee)
-    - Several links to studies showing IF to be safe and effective
-        - Especially for controlling cravings and blood sugar levels
-    - UNSAFE for some people
-        - Diabetics, postmenopausal, pregnant, those wishing to become pregnant
-- [Diet-boosting foods](https://medlineplus.gov/ency/patientinstructions/000810.htm)
-    - Lots of links to studies showing what foods are ideal for individual goals
-- [Don Heatrick](https://heatrick.com/)
-    - Just an enormous amount of information for training, weight managment, motivation, and more
-    - He also has a youtube channel, and [this video on Discipline](https://www.youtube.com/watch?v=mVI8Ff-J-sc) is particularly grea
--->
+<Accordion>
+  <div slot="header">Intermittent Fasting (16|8 strategy)</div>
+
+  <p>
+    <a
+      href="https://www.healthline.com/nutrition/16-8-intermittent-fasting#basics"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Link to source
+    </a> (healthline), my take aways are &darr;:
+  </p>
+
+  <ul>
+    <li>Once or twice a week, fast for 16hrs, eat for 8hrs</li>
+    <li>
+      <ul>
+        <li>
+          For those 16hrs, only zero-calorie drinks (water, tea, plain coffee)
+        </li>
+      </ul>
+    </li>
+
+    <li>Several links to studies showing IF to be safe and effective</li>
+    <li>
+      <ul>
+        <li>Especially for controlling cravings and blood sugar levels</li>
+      </ul>
+    </li>
+
+    <li>UNSAFE for some people</li>
+    <li>
+      <ul>
+        <li>
+          Diabetics, postmenopausal, pregnant, those wishing to become pregnant
+        </li>
+      </ul>
+    </li>
+  </ul>
+</Accordion>
+
+<Accordion>
+  <div slot="header">Diet-boosting foods</div>
+
+  <p>
+    <a
+      href="https://medlineplus.gov/ency/patientinstructions/000810.htm"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Link to source
+    </a> (Medline Plus), has lots of links to studies showing what foods are ideal
+    for individual goals. My key take aways are &darr;:
+  </p>
+
+  <ul>
+    <li>
+      keep plenty of raw fruits/veggetables on hard for snacking to keep
+      crazings at bay
+    </li>
+
+    <li>beans are excellent sources of protien and fiber</li>
+
+    <li>whole grains should be at least half of the grains you eat</li>
+
+    <li>
+      nuts are great in small quantities as they are high in things like fiber,
+      protien, and healthy fats, but are also high in caloric count
+    </li>
+
+    <li>
+      Seafood is high in nutrients and heart-healthy fat, but should be eaten in
+      moderation due to ocean polution
+    </li>
+  </ul>
+</Accordion>
+
 <style>
   h2 {
     margin-top: 3rem;
