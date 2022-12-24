@@ -7,7 +7,9 @@
 </script>
 
 <header>
-  <Logo />
+  <a href="/" aria-label="Home page">
+    <Logo />
+  </a>
 
   <ul>
     <li class:active={isHome}>
