@@ -30,49 +30,49 @@
 <ul class="homepage-links">
   <li>
     <a href="/nutrition">
-      <Bowl class="svg-position" /> Nutrition (Coming Soon)
+      <Bowl class="svg-position" /> Nutrition (In Progress)
     </a>
   </li>
 
   <li>
     <a href="/weight-management">
-      <Scale class="svg-position" /> Weight Management (Coming Soon)
+      <Scale class="svg-position" /> Weight Management (In Progress)
     </a>
   </li>
 
   <li>
     <a href="/training-plans">
-      <Notebook class="svg-position" /> Training Plans (Coming Soon)
+      <Notebook class="svg-position" /> Training Plans (In Progress)
     </a>
   </li>
 
   <li>
     <a href="/training-day">
-      <Checklist class="svg-position" /> A Training Day (Coming Soon)
+      <Checklist class="svg-position" /> A Training Day (In Progress)
     </a>
   </li>
 
   <li>
     <a href="/fight-week">
-      <Sleep class="svg-position" /> Fight Week (Coming Soon)
+      <Sleep class="svg-position" /> Fight Week (In Progress)
     </a>
   </li>
 
   <li>
     <a href="/fight-day">
-      <CalendarHeart class="svg-position" /> Fight Day (Coming Soon)
+      <CalendarHeart class="svg-position" /> Fight Day (In Progress)
     </a>
   </li>
 
   <li>
     <a href="/motivations">
-      <Motivation class="svg-position" /> Motivation (Coming Soon)
+      <Motivation class="svg-position" /> Motivation (In Progress)
     </a>
   </li>
 
   <li>
     <a href="/who-to-follow">
-      <People class="svg-position" /> Who to Follow (Coming Soon)
+      <People class="svg-position" /> Who to Follow (In Progress)
     </a>
   </li>
 

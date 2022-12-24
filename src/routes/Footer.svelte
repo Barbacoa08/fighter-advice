@@ -1,9 +1,10 @@
-<footer>&forall; by <code>barbajoe</code></footer>
+<footer>
+  &forall; by <a href="https://github.com/Barbacoa08/"><code>barbajoe</code></a>
+</footer>
 
 <style>
   footer {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    margin: 1rem;
+    text-align: end;
   }
 </style>
