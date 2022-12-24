@@ -11,7 +11,7 @@
   viewBox="0 0 16 16"
 >
   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g transform="translate(0.000000, 3.000000)" fill="#434343">
+    <g transform="translate(0.000000, 3.000000)" fill="currentColor">
       <path
         d="M9.855,7.053 C9.432,7.624 8.021,7.772 8.021,7.772 C8.021,7.772 6.58,7.63 6.156,7.066 C4.121,7.066 3.058,9.989 3.058,9.989 L12.984,9.989 C12.984,9.988 12.146,7.053 9.855,7.053 L9.855,7.053 Z"
         class="si-glyph-fill"
