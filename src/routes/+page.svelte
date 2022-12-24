@@ -29,7 +29,7 @@
 <style>
   :root {
     --list-background-color: rgb(34, 34, 34);
-    --list-link-color: rgb(210, 210, 210);
+    --list-link-color: white;
   }
   @media (prefers-color-scheme: dark) {
     :root {
