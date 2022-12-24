@@ -1,5 +1,6 @@
 <script lang="ts">
   import TextGradient from "$lib/components/TextGradient.svelte";
+  import Scale from "$lib/icons/Scale.svelte";
 
   import type { PageData } from "./+page.server";
 
@@ -20,9 +21,11 @@
   oppinion and based on my own experience. Helpfulness to others will vary.
 </p>
 
-<ul>
+<ul class="homepage-links">
   {#each links as { href, text } (href)}
-    <li><a {href}>{text}</a></li>
+    <li>
+      <a {href}><Scale class="svg-position" /> {text}</a>
+    </li>
   {/each}
 </ul>
 
@@ -38,7 +41,7 @@
     }
   }
 
-  ul {
+  ul.homepage-links {
     list-style-type: none;
     margin-top: 5rem;
     padding: 0;
@@ -59,6 +62,7 @@
   }
 
   li a {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,5 +74,15 @@
       border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
       transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
       background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+  }
+
+  /*
+  HACK: use of `:global()` is far from ideal, but it works and is the best workaround from the docs:
+  https://github.com/sveltejs/svelte/issues/2870#issuecomment-498360853
+  */
+  :global(ul.homepage-links li a .svg-position) {
+    position: absolute;
+    left: 1.5rem;
+    color: var(--list-link-color);
   }
 </style>
