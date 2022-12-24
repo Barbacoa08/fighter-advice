@@ -16,7 +16,8 @@
 
 <p>
   Below are my recommendations for current fighters. These are purely my
-  oppinion and based on my own experience. Helpfulness to others will vary.
+  oppinion and based on my own experience. Helpfulness to others will vary. Note
+  that there is overlap between pages.
 </p>
 
 <ul class="homepage-links">

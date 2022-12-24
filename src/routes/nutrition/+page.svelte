@@ -220,10 +220,3 @@
     </li>
   </ul>
 </Accordion>
-
-<style>
-  h2 {
-    margin-top: 3rem;
-    border-bottom: 1px solid var(--border-color-gray);
-  }
-</style>
