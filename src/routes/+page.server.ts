@@ -22,7 +22,7 @@ export const load: PageServerLoad = async () => {
     {
       href: "/nutrition",
       text: "Nutrition",
-      completed: false,
+      completed: true,
       icon: "bowl",
     },
     {

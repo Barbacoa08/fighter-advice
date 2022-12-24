@@ -3,6 +3,9 @@
   --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
   --font-size-xl: clamp(1.44rem, 1vw + 1.6rem, 2rem);
 
+  --border-color-gray: hsl(0, 0%, 80%); /* #ccc */
+
+  /* has "dark" versions */
   --color-link-text: #0000ee;
   --color-text: hsl(12, 5%, 4%);
   --color-bg: hsl(10, 21%, 95%);
