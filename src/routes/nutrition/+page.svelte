@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Accordion, Icon } from "$lib/components";
+
   const header = "Nutrition";
 </script>
 
@@ -7,81 +9,113 @@
   <meta name="description" content={`barbajoe's Fighter Advice on ${header}`} />
 </svelte:head>
 
-<h1>{header}</h1>
+<h1>{header} <Icon icon="bowl" /></h1>
 
 <p>"Abs are made in the gym"</p>
 
 <p>
-  This phrase is more true than most people think. In a fight you want to be at
-  your absolute best shape possible, and if you haven't been eating well, it
+  This phrase is deceptively truthful. In a fight you want to be at your
+  absolute best shape possible, and if you haven't been giving your body the
+  nutrition it requires, it
   <i>will</i> negatively affect your performance.
 </p>
 
-<p>
-  With that in mind, let's get into how to eat to fule your best physical shape
-  possible!
-</p>
+<h2>General Advice</h2>
 
-<h2>What to Eat</h2>
-<p>
-  There is no one diet that is best for everyone. Every body is different, and
-  best thing you can do is to experiment and see what works best for you.
-</p>
+<Accordion>
+  <div slot="header">Diet</div>
 
-<p>
-  Experiment to find what works for you and then <i>stick with it</i> to see maxiumum
-  effect
-</p>
+  <p>
+    There is no one diet that is best for everyone. Every body is different, and
+    best thing you can do is to experiment and see what works best for you.
+  </p>
+
+  <p>
+    Experiment to find what works for you and then <i>stick with it</i> to see maxiumum
+    effect. With that stated, here are things that work well for my body:
+  </p>
+</Accordion>
+
+<Accordion>
+  <div slot="header">First time fighters</div>
+
+  <p><i>Do not</i> cut more than 5 pounds (roughly 2.5 kilograms)</p>
+
+  <p>
+    Cutting weight is an enormous stressor on your body, and you need to ease
+    into it to find where your performance maximum is
+  </p>
+</Accordion>
+
+<Accordion>
+  <div slot="header">Amateur time fighters</div>
+
+  <p>Don't cut more than 8% of your body weight</p>
+
+  <p>
+    Without a professional nutritionist, cutting more than 8% is dangerous,
+    especially if you are already lean
+  </p>
+</Accordion>
+
+<Accordion>
+  <div slot="header">Alcohol</div>
+
+  <p>Don't drink any alcohol three weeks out from fight day</p>
+
+  <p>
+    Alcohol is one of the most negative foods you can consume when getting ready
+    for a fight. It slows muscle recovery, interfeers with sleep, and if you
+    start, it becomes increasingly difficult to stop.
+  </p>
+
+  <p>
+    There are exceptions to every rule, and you should feel free to have a glass
+    of wine if you're at a dinner party, or a beer if out with friends, but
+    avoid liquor likes it's the plague.
+  </p>
+</Accordion>
 
 <h2>A collection of resources:</h2>
-<ul>
-  <li>
-    <a href="https://www.webmd.com/diet/obesity/features/6_meals_a_day">
-      6 Meals a Day for Weight Loss
-    </a>
-  </li>
-  <li>
-    <ul>
-      <li>Many meals a day <i>does not</i> increase your metabolism</li>
-      <li>
-        Many meals a day <i>can</i> help you control cravings and appetite
-      </li>
-      <li>High fiber foods help you <i>feel</i> full for longer</li>
-    </ul>
-  </li>
 
-  <li>First time fighters</li>
-  <li>
-    <ul>
-      <li>
-        <i>Do not</i> cut more than 5lbs
-      </li>
+<Accordion>
+  <div slot="header">Simple recipies</div>
 
-      <li>
-        It's an enormous stressor on your body, and you need to ease into it to
-        find where your performance maximum is
-      </li>
-    </ul>
-  </li>
+  <p>
+    <a href="https://barbie-meals.netlify.app/breakfast-burritos">
+      Breakfast Burritos
+    </a>: a favorite of mine on training days
+  </p>
 
-  <li>Amateur fighters</li>
-  <li>
-    <ul>
-      <li>Don't cut more than 8% of your body weight</li>
+  <p>
+    <a href="https://barbie-meals.netlify.app/baked-carrot-potatoes">
+      Baked Carrots and Potatoes
+    </a>: stores well and great for snacking on or adding to meals
+  </p>
 
-      <li>
-        Without a professional nutritionist, cutting more than 8% is dangerous,
-        especially if you are already lean
-      </li>
-    </ul>
-  </li>
+  <p>Greens Salad with Chicken and Thai Style Sweet Chili Sauce</p>
+</Accordion>
 
-  <li>No alcohol three weeks out</li>
+<Accordion>
+  <div slot="header">6 Meals a Day for Weight Loss</div>
 
-  <li>
-    <a href="https://www.kachava.com/">Ka'Chava</a> is my favorite post-workout
-  </li>
-</ul>
+  <ul>
+    <li>
+      <a
+        href="https://www.webmd.com/diet/obesity/features/6_meals_a_day"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Source (WebMD)
+      </a>
+    </li>
+    <li>Many meals a day <i>does not</i> increase your metabolism</li>
+    <li>
+      Many meals a day <i>can</i> help you control cravings and appetite
+    </li>
+    <li>High fiber foods help you <i>feel</i> full for longer</li>
+  </ul>
+</Accordion>
 
 <!--
   - [Fight Week Weight Cut Manual](https://drive.google.com/file/d/1y43TXbQSIMSszrYNAlToa68dzGUouU2O/view)
@@ -102,3 +136,8 @@
     - Just an enormous amount of information for training, weight managment, motivation, and more
     - He also has a youtube channel, and [this video on Discipline](https://www.youtube.com/watch?v=mVI8Ff-J-sc) is particularly grea
 -->
+<style>
+  h2 {
+    margin-top: 3rem;
+  }
+</style>

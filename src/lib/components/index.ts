@@ -1,3 +1,6 @@
+import Accordion from "./Accordion.svelte";
+export { Accordion };
+
 import Icon from "./Icon.svelte";
 export { Icon };
 
