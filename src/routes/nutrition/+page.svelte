@@ -99,20 +99,23 @@
 <Accordion>
   <div slot="header">6 Meals a Day for Weight Loss</div>
 
+  <p>
+    <a
+      href="https://www.webmd.com/diet/obesity/features/6_meals_a_day"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Link to source
+    </a> (WebMD), my take aways are &darr;:
+  </p>
+
   <ul>
-    <li>
-      <a
-        href="https://www.webmd.com/diet/obesity/features/6_meals_a_day"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Source (WebMD)
-      </a>
-    </li>
     <li>Many meals a day <i>does not</i> increase your metabolism</li>
+
     <li>
       Many meals a day <i>can</i> help you control cravings and appetite
     </li>
+
     <li>High fiber foods help you <i>feel</i> full for longer</li>
   </ul>
 </Accordion>
