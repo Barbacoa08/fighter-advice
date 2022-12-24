@@ -2,7 +2,17 @@
   import { dev } from "$app/environment";
 
   import { TextGradient } from "$lib/components";
-  import { Bowl, Checklist, Notebook, Scale } from "$lib/icons";
+  import {
+    Bowl,
+    CalendarHeart,
+    Checklist,
+    Me,
+    Motivation,
+    Notebook,
+    People,
+    Scale,
+    Sleep,
+  } from "$lib/icons";
 </script>
 
 <svelte:head>
@@ -44,32 +54,32 @@
 
   <li>
     <a href="/fight-week">
-      <Bowl class="svg-position" /> Fight Week (Coming Soon)
+      <Sleep class="svg-position" /> Fight Week (Coming Soon)
     </a>
   </li>
 
   <li>
     <a href="/fight-day">
-      <Bowl class="svg-position" /> Fight Day (Coming Soon)
+      <CalendarHeart class="svg-position" /> Fight Day (Coming Soon)
     </a>
   </li>
 
   <li>
     <a href="/motivations">
-      <Bowl class="svg-position" /> Motivation (Coming Soon)
+      <Motivation class="svg-position" /> Motivation (Coming Soon)
     </a>
   </li>
 
   <li>
     <a href="/who-to-follow">
-      <Bowl class="svg-position" /> Who to Follow (Coming Soon)
+      <People class="svg-position" /> Who to Follow (Coming Soon)
     </a>
   </li>
 
   {#if dev}
     <li>
       <a href="/my-stuff">
-        <Bowl class="svg-position" /> My Stuff (In Development)
+        <Me class="svg-position" /> My Stuff (In Development)
       </a>
     </li>
   {/if}
