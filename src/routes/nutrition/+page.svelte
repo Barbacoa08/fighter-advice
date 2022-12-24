@@ -11,7 +11,7 @@
 
 <h1>{header} <Icon icon="bowl" /></h1>
 
-<p>"Abs are made in the gym"</p>
+<p>"Abs are made in the kitchen"</p>
 
 <p>
   This phrase is deceptively truthful. In a fight you want to be at your
