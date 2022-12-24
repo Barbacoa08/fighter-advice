@@ -9,7 +9,7 @@
 
 <svelte:head>
   <title>Fighter Advice</title>
-  <meta name="description" content="barbajoe's Fighter Advice" />
+  <meta name="description" content="barbajoe's Fighter Advice homepage" />
 </svelte:head>
 
 <h1>Welcome to barbajoe's <TextGradient>Fighter Advice</TextGradient></h1>
@@ -20,11 +20,11 @@
 </p>
 
 <ul class="homepage-links">
-  {#each links as { href, icon, text } (href)}
+  {#each links as { href, icon, text, completed } (href)}
     <li>
       <a {href}>
         <Icon {icon} />
-        <span>{text}</span>
+        <span>{text} {completed === false ? "(In Progress)" : ""}</span>
       </a>
     </li>
   {/each}

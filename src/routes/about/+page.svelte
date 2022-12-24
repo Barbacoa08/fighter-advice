@@ -4,6 +4,7 @@
 
 <svelte:head>
   <title>FA: About</title>
+  <meta name="description" content="barbajoe's Fighter Advice About page" />
 </svelte:head>
 
 <h1>About <TextGradient>Fighter Advice</TextGradient></h1>

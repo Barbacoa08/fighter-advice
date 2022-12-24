@@ -1,5 +1,5 @@
 <script lang="ts">
-  const header = "Nutrition";
+  const header = "My Stuff";
 </script>
 
 <svelte:head>
