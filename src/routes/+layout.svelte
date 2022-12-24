@@ -5,15 +5,23 @@
   import "./global.css";
 </script>
 
-<Header />
+<div class="body-main-wrapper">
+  <Header />
 
-<main>
-  <slot />
-</main>
+  <main>
+    <slot />
+  </main>
 
-<Footer />
+  <Footer />
+</div>
 
 <style>
+  .body-main-wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
   main {
     margin: auto;
     padding: 1em;

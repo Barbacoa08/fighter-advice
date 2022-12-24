@@ -2,8 +2,7 @@
 
 <style>
   footer {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    margin: 1rem;
+    text-align: end;
   }
 </style>
