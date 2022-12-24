@@ -33,4 +33,6 @@
   <Scale class="svg-position" />
 {:else if icon === "sleep"}
   <Sleep class="svg-position" />
+{:else}
+  <p>Unknown Icon: <code>{icon}</code></p>
 {/if}
