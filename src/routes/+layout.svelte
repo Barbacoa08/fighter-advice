@@ -23,8 +23,7 @@
   }
 
   main {
-    margin: auto;
-    padding: 1em;
-    max-width: 60ch;
+    margin: 1rem auto;
+    width: clamp(400px, 80%, 60ch);
   }
 </style>
