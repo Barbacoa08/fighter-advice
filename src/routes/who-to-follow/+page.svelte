@@ -80,12 +80,6 @@
   actively fighting; with a recent win in Lumpinee Stadium.
 </p>
 
-<!-- <p>
-  Ian is a great example of someone who has made it to the top of the sport.
-  He's also a great example of someone who has overcome a lot of obstacles to
-  get there.
-</p> -->
-
 <h2>Angela Chang</h2>
 
 <Link isExternal href="https://angelamuaythai.com/">Website</Link> |
