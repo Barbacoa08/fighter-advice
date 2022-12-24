@@ -1,15 +1,15 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { Logo } from "$lib/components";
+  import { Link, Logo } from "$lib/components";
 
   $: isHome = $page.url.pathname === "/";
   $: isAbout = $page.url.pathname === "/about";
 </script>
 
 <header>
-  <a href="/" aria-label="Home page">
+  <Link aria-label="Homepage">
     <Logo />
-  </a>
+  </Link>
 
   <ul>
     <li class:active={isHome}>

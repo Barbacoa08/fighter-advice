@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Accordion, Icon } from "$lib/components";
+  import { Accordion, Icon, Link } from "$lib/components";
 
   const header = "Nutrition";
 </script>
@@ -82,15 +82,18 @@
   <div slot="header">Simple recipies</div>
 
   <p>
-    <a href="https://barbie-meals.netlify.app/breakfast-burritos">
+    <Link isExternal href="https://barbie-meals.netlify.app/breakfast-burritos">
       Breakfast Burritos
-    </a>: a favorite of mine on training days
+    </Link>: a favorite of mine on training days
   </p>
 
   <p>
-    <a href="https://barbie-meals.netlify.app/baked-carrot-potatoes">
+    <Link
+      isExternal
+      href="https://barbie-meals.netlify.app/baked-carrot-potatoes"
+    >
       Baked Carrots and Potatoes
-    </a>: stores well and great for snacking on or adding to meals
+    </Link>: stores well and great for snacking on or adding to meals
   </p>
 
   <p>Greens Salad with Chicken and Thai Style Sweet Chili Sauce</p>
@@ -100,13 +103,12 @@
   <div slot="header">6 Meals a Day for Weight Loss</div>
 
   <p>
-    <a
+    <Link
+      isExternal
       href="https://www.webmd.com/diet/obesity/features/6_meals_a_day"
-      target="_blank"
-      rel="noopener noreferrer"
     >
       Link to source
-    </a> (WebMD), my take aways are &darr;:
+    </Link> (WebMD), my take aways are &darr;:
   </p>
 
   <ul>
@@ -124,17 +126,16 @@
   <div slot="header">Fight Week Weight Cut Manual</div>
 
   <p>
-    <a
+    <Link
+      isExternal
       href="https://drive.google.com/file/d/1y43TXbQSIMSszrYNAlToa68dzGUouU2O/view"
-      target="_blank"
-      rel="noopener noreferrer"
     >
       Link to source
-    </a>
+    </Link>
     (
-    <a href="https://www.instagram.com/condition.nutrition/">
+    <Link isExternal href="https://www.instagram.com/condition.nutrition/">
       @condition.nutrition
-    </a> ), PDF contains &darr;:
+    </Link> ), PDF contains &darr;:
   </p>
 
   <ul>
@@ -149,13 +150,12 @@
   <div slot="header">Intermittent Fasting (16|8 strategy)</div>
 
   <p>
-    <a
+    <Link
+      isExternal
       href="https://www.healthline.com/nutrition/16-8-intermittent-fasting#basics"
-      target="_blank"
-      rel="noopener noreferrer"
     >
       Link to source
-    </a> (healthline), my take aways are &darr;:
+    </Link> (healthline), my take aways are &darr;:
   </p>
 
   <ul>
@@ -190,13 +190,12 @@
   <div slot="header">Diet-boosting foods</div>
 
   <p>
-    <a
+    <Link
+      isExternal
       href="https://medlineplus.gov/ency/patientinstructions/000810.htm"
-      target="_blank"
-      rel="noopener noreferrer"
     >
       Link to source
-    </a> (Medline Plus), has lots of links to studies showing what foods are ideal
+    </Link> (Medline Plus), has lots of links to studies showing what foods are ideal
     for individual goals. My key take aways are &darr;:
   </p>
 
