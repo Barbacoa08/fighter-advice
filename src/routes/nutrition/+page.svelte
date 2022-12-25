@@ -39,7 +39,7 @@
 <Accordion>
   <div slot="header">First time fighters</div>
 
-  <p><i>Do not</i> cut more than 5 pounds (roughly 2.5 kilograms)</p>
+  <p><i>Do not</i> cut more than 4% of your body weight</p>
 
   <p>
     Cutting weight is an enormous stressor on your body, and you need to ease
