@@ -40,6 +40,8 @@ h1:first-child {
 
 h2 {
   font-size: var(--font-size-lg);
+  margin-top: 3rem;
+  border-bottom: 1px solid var(--border-color-gray);
 }
 
 code {

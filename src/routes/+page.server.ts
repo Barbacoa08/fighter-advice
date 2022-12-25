@@ -64,7 +64,7 @@ export const load: PageServerLoad = async () => {
     {
       href: "/who-to-follow",
       text: "Who to Follow",
-      completed: false,
+      completed: true,
       icon: "people",
     },
   ];
