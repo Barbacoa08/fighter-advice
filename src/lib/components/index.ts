@@ -1,5 +1,4 @@
-import Accordion from "./Accordion.svelte";
-export { Accordion };
+export * from "./Accordion";
 
 import Icon from "./Icon.svelte";
 export { Icon };
