@@ -1,9 +1,13 @@
+<script lang="ts">
+  const id = Math.random().toString(36).substr(2, 9);
+</script>
+
 <li>
-  <input type="checkbox" checked />
+  <input type="checkbox" checked aria-labelledby={id} />
 
   <i />
 
-  <div class="heading">
+  <div class="heading" {id}>
     <slot name="header">Header</slot>
   </div>
 
