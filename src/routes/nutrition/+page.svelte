@@ -50,7 +50,7 @@
   </AccordionItem>
 
   <AccordionItem>
-    <div slot="header">Amateur time fighters</div>
+    <div slot="header">Amateur fighters</div>
 
     <p>Don't cut more than 8% of your body weight</p>
 
