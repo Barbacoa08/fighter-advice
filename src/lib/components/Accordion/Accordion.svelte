@@ -1,4 +1,6 @@
 <ul>
+  <slot name="header"></slot>
+
   <slot />
 </ul>
 

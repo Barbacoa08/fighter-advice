@@ -20,9 +20,9 @@
   <i>will</i> negatively affect your performance.
 </p>
 
-<h2>General Advice</h2>
-
 <Accordion>
+  <h2 slot="header">General Advice</h2>
+
   <AccordionItem>
     <div slot="header">Diet</div>
 
@@ -79,9 +79,9 @@
   </AccordionItem>
 </Accordion>
 
-<h2>A collection of resources:</h2>
-
 <Accordion>
+  <h2 slot="header">A collection of resources:</h2>
+
   <AccordionItem>
     <div slot="header">Simple recipies</div>
 
