@@ -34,6 +34,7 @@
     max-height: 800px;
     transform: translate(0, 0);
     margin: 0;
+    z-index: 2;
   }
 
   li {
