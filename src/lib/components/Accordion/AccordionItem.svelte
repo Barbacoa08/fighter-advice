@@ -39,7 +39,7 @@
   li {
     position: relative;
     padding: 1rem 0;
-    border-top: 1px dotted var(--border-color-gray);
+    border-bottom: 1px dotted var(--border-color-gray);
     animation-delay: 0.5s;
   }
   li i {
