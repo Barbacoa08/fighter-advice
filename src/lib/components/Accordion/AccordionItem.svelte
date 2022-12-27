@@ -25,7 +25,7 @@
   }
 
   li {
-    animation: flipdown 0.5s ease both;
+    animation: flipdown 0.3s ease both;
   }
 
   p {
@@ -41,7 +41,7 @@
     position: relative;
     padding: 1rem 0;
     border-bottom: 1px dotted var(--border-color-gray);
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
   }
   li i {
     position: absolute;
