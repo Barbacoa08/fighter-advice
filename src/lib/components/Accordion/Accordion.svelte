@@ -1,6 +1,6 @@
-<ul>
-  <slot name="header"></slot>
+<slot name="header" />
 
+<ul>
   <slot />
 </ul>
 
