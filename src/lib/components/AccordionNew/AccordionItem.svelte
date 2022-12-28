@@ -29,7 +29,7 @@
   li > button ~ section {
     transition: all 0.25s ease-in-out;
   }
-  li {
+  li > button ~ section {
     animation: flipdown 0.3s ease both;
   }
 
