@@ -1,9 +1,17 @@
 <script lang="ts">
   const id = Math.random().toString(36).substr(2, 9);
+
+  let checked = true;
 </script>
 
 <li>
-  <input type="checkbox" checked aria-labelledby={id} />
+  <input
+    type="checkbox"
+    bind:checked
+    aria-labelledby={id}
+    aria-controls={id}
+    aria-expanded={!checked}
+  />
 
   <i />
 
