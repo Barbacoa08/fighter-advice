@@ -1,5 +1,12 @@
 <script lang="ts">
-  import { Accordion, AccordionItem, Icon, Link } from "$lib/components";
+  import {
+    Accordion,
+    AccordionItem,
+    AccordionItemNew,
+    AccordionNew,
+    Icon,
+    Link,
+  } from "$lib/components";
 
   const header = "Nutrition";
 </script>
@@ -20,10 +27,32 @@
   <i>will</i> negatively affect your performance.
 </p>
 
-<Accordion>
+<AccordionNew>
   <h2 slot="header">General Advice</h2>
 
-  <AccordionItem>
+  <AccordionItemNew>
+    <div slot="header">First time fighters</div>
+
+    <p><i>Do not</i> cut more than 4% of your body weight</p>
+
+    <p>
+      Cutting weight is an enormous stressor on your body, and you need to ease
+      into it to find where your performance maximum is
+    </p>
+  </AccordionItemNew>
+
+  <AccordionItemNew>
+    <div slot="header">Amateur fighters</div>
+
+    <p>Don't cut more than 8% of your body weight</p>
+
+    <p>
+      Without a professional nutritionist, cutting more than 8% is dangerous,
+      especially if you are already lean
+    </p>
+  </AccordionItemNew>
+
+  <AccordionItemNew>
     <div slot="header">Diet</div>
 
     <p>
@@ -36,31 +65,9 @@
       Experiment to find what works for you and then <i>stick with it</i> to see
       maxiumum effect. With that stated, here are things that work well for my body:
     </p>
-  </AccordionItem>
+  </AccordionItemNew>
 
-  <AccordionItem>
-    <div slot="header">First time fighters</div>
-
-    <p><i>Do not</i> cut more than 4% of your body weight</p>
-
-    <p>
-      Cutting weight is an enormous stressor on your body, and you need to ease
-      into it to find where your performance maximum is
-    </p>
-  </AccordionItem>
-
-  <AccordionItem>
-    <div slot="header">Amateur fighters</div>
-
-    <p>Don't cut more than 8% of your body weight</p>
-
-    <p>
-      Without a professional nutritionist, cutting more than 8% is dangerous,
-      especially if you are already lean
-    </p>
-  </AccordionItem>
-
-  <AccordionItem>
+  <AccordionItemNew>
     <div slot="header">Alcohol</div>
 
     <p>Don't drink any alcohol three weeks out from fight day</p>
@@ -76,8 +83,8 @@
       glass of wine if you're at a dinner party, or a beer if out with friends,
       but avoid liquor likes it's the plague.
     </p>
-  </AccordionItem>
-</Accordion>
+  </AccordionItemNew>
+</AccordionNew>
 
 <Accordion>
   <h2 slot="header">A collection of resources:</h2>
