@@ -1,98 +1,96 @@
 <script lang="ts">
-  const id = Math.random().toString(36).substr(2, 9);
+  const id = Math.random().toString(36).substring(2, 9);
 
-  let checked = true;
+  let expanded = false;
 </script>
 
-<li>
-  <input
-    type="checkbox"
-    bind:checked
-    aria-labelledby={id}
+<li class={$$props.class}>
+  <button
+    {id}
+    type="button"
+    on:click={() => (expanded = !expanded)}
     aria-controls={id}
-    aria-expanded={!checked}
-  />
-
-  <i />
-
-  <div class="heading" {id}>
+    aria-expanded={expanded}
+  >
     <slot name="header">Header</slot>
-  </div>
+  </button>
 
-  <p>
+  <i aria-hidden="true" />
+
+  <section>
     <slot />
-  </p>
+  </section>
 </li>
 
 <style>
-  .heading {
-    font-size: larger;
-    font-weight: bolder;
-  }
-
-  li i:before,
-  li i:after,
-  p {
+  /* top level animation+transition */
+  li > button ~ i:before,
+  li > button ~ i:after,
+  li > button ~ section {
     transition: all 0.25s ease-in-out;
   }
-
   li {
     animation: flipdown 0.3s ease both;
   }
 
-  p {
-    position: relative;
-    overflow: hidden;
-    max-height: 800px;
-    transform: translate(0, 0);
-    margin: 0;
-    z-index: 2;
-  }
-
+  /* styles for "closed" accordion items */
   li {
     position: relative;
     padding: 1rem 0;
     border-bottom: 1px dotted var(--border-color-gray);
-    animation-delay: 0.3s;
   }
-  li i {
+
+  li > button {
+    font-size: larger;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 100%;
+
+    /* remove button styling */
+    border: none;
+    padding: 0;
+    text-align: left;
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  li > button ~ section {
+    position: relative;
+    overflow: hidden;
+    max-height: 800px;
+    transform: translate(0, 0);
+  }
+
+  li > button ~ i {
     position: absolute;
     transform: translate(-6px, 0);
     margin-top: 0.5rem;
     right: 0;
   }
-  li i:before,
-  li i:after {
+  li > button ~ i:before,
+  li > button ~ i:after {
     content: "";
     position: absolute;
     background-color: #ff6873;
     width: 3px;
     height: 9px;
   }
-  li i:before {
+
+  /* styles for opening/opened accordion items */
+  li > button ~ i:before {
     transform: translate(-2px, 0) rotate(45deg);
   }
-  li i:after {
+  li > button ~ i:after {
     transform: translate(2px, 0) rotate(-45deg);
   }
-  li input[type="checkbox"] {
-    position: absolute;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-  }
-  li input[type="checkbox"]:checked ~ p {
-    margin-top: 0;
+  li > button[aria-expanded="false"] ~ section {
     max-height: 0;
-    opacity: 0;
     transform: translate(0, 50%);
   }
-  li input[type="checkbox"]:checked ~ i:before {
+  li > button[aria-expanded="false"] ~ i:before {
     transform: translate(2px, 0) rotate(45deg);
   }
-  li input[type="checkbox"]:checked ~ i:after {
+  li > button[aria-expanded="false"] ~ i:after {
     transform: translate(-2px, 0) rotate(-45deg);
   }
 

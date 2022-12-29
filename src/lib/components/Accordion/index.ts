@@ -8,4 +8,4 @@ import AccordionItem from "./AccordionItem.svelte";
 // JS (non-TS) version here:
 // https://github.com/diwakersurya/svelte-accordion
 
-export { Accordion, AccordionItem };
+export { AccordionItem, Accordion };

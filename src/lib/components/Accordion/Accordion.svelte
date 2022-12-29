@@ -1,6 +1,12 @@
-<slot name="header" />
+<script lang="ts">
+  const id = Math.random().toString(36).substring(2, 9);
+</script>
 
-<ul>
+<div {id}>
+  <slot name="header" />
+</div>
+
+<ul aria-labelledby={id}>
   <slot />
 </ul>
 
