@@ -85,6 +85,7 @@
   }
   li > button[aria-expanded="false"] ~ section {
     max-height: 0;
+    visibility: hidden;
     transform: translate(0, 50%);
   }
   li > button[aria-expanded="false"] ~ i:before {
