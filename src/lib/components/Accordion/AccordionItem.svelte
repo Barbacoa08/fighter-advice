@@ -17,7 +17,7 @@
 
   <i aria-hidden="true" />
 
-  <section>
+  <section aria-hidden={!expanded}>
     <slot />
   </section>
 </li>
