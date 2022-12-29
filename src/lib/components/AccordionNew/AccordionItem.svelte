@@ -17,7 +17,7 @@
 
   <i aria-hidden="true" />
 
-  <section hidden={!checked}>
+  <section>
     <slot />
   </section>
 </li>
@@ -29,7 +29,7 @@
   li > button ~ section {
     transition: all 0.25s ease-in-out;
   }
-  li > button ~ section {
+  li {
     animation: flipdown 0.3s ease both;
   }
 
@@ -38,7 +38,6 @@
     position: relative;
     padding: 1rem 0;
     border-bottom: 1px dotted var(--border-color-gray);
-    animation-delay: 0.3s;
   }
 
   li > button {
@@ -85,6 +84,7 @@
     transform: translate(2px, 0) rotate(-45deg);
   }
   li > button[aria-expanded="true"] ~ section {
+    max-height: 0;
     transform: translate(0, 50%);
   }
   li > button[aria-expanded="true"] ~ i:before {
