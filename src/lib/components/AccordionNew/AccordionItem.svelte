@@ -1,16 +1,16 @@
 <script lang="ts">
   const id = Math.random().toString(36).substring(2, 9);
 
-  let checked = false;
+  let expanded = false;
 </script>
 
 <li class={$$props.class}>
   <button
     {id}
     type="button"
-    on:click={() => (checked = !checked)}
+    on:click={() => (expanded = !expanded)}
     aria-controls={id}
-    aria-expanded={!checked}
+    aria-expanded={expanded}
   >
     <slot name="header">Header</slot>
   </button>
@@ -83,14 +83,14 @@
   li > button ~ i:after {
     transform: translate(2px, 0) rotate(-45deg);
   }
-  li > button[aria-expanded="true"] ~ section {
+  li > button[aria-expanded="false"] ~ section {
     max-height: 0;
     transform: translate(0, 50%);
   }
-  li > button[aria-expanded="true"] ~ i:before {
+  li > button[aria-expanded="false"] ~ i:before {
     transform: translate(2px, 0) rotate(45deg);
   }
-  li > button[aria-expanded="true"] ~ i:after {
+  li > button[aria-expanded="false"] ~ i:after {
     transform: translate(-2px, 0) rotate(-45deg);
   }
 
