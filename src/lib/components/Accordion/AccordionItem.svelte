@@ -46,7 +46,7 @@
     cursor: pointer;
     width: 100%;
 
-    /* remove button styling */
+    /* removing button styling */
     border: none;
     padding: 0;
     text-align: left;
