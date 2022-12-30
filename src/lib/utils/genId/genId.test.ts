@@ -1,5 +1,3 @@
-import { describe, expect, it } from "vitest";
-
 import { genId } from "./genId";
 
 describe("genId", () => {

@@ -9,6 +9,7 @@ const config: UserConfig = {
     open: true,
   },
   test: {
+    globals: true,
     include: ["src/**/*.test.{js,ts}"],
   },
 };
