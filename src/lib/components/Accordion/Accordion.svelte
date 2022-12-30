@@ -1,5 +1,7 @@
 <script lang="ts">
-  const id = Math.random().toString(36).substring(2, 9);
+  import { genId } from "$lib/utils";
+
+  const id = genId();
 </script>
 
 <div {id}>
