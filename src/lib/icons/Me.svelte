@@ -3,13 +3,7 @@
   export let height = "1.5rem";
 </script>
 
-<svg
-  class={$$props.class}
-  {height}
-  {width}
-  fill="currentColor"
-  viewBox="0 0 24 24"
->
+<svg {height} {width} fill="currentColor" viewBox="0 0 24 24" {...$$restProps}>
   <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
     <g transform="translate(-25.000000, -207.000000)">
       <g transform="translate(25.000000, 207.000000)">

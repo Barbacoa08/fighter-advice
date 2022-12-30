@@ -3,13 +3,7 @@
   export let height = "1.5rem";
 </script>
 
-<svg
-  class={$$props.class}
-  {height}
-  {width}
-  fill="currentColor"
-  viewBox="0 0 16 16"
->
+<svg {height} {width} fill="currentColor" viewBox="0 0 16 16" {...$$restProps}>
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"
