@@ -3,13 +3,7 @@
   export let height = "1.5rem";
 </script>
 
-<svg
-  class={$$props.class}
-  {height}
-  {width}
-  fill="currentColor"
-  viewBox="0 0 24 24"
->
+<svg {height} {width} fill="currentColor" viewBox="0 0 24 24" {...$$restProps}>
   <path
     d="M10 20H9M3 8V6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V8M3 8V14M3 8H9M21 8V11M21 8H9M3 14V18C3 19.1046 3.89543 20 5 20H9M3 14H9M9 8V14M9 14V20M9 14H10M15 8V11"
     stroke="currentColor"

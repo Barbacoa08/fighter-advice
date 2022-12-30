@@ -4,11 +4,11 @@
 </script>
 
 <svg
-  class={$$props.class}
   {height}
   {width}
   fill="currentColor"
   viewBox="0 0 433.269 433.269"
+  {...$$restProps}
 >
   <g>
     <g>
