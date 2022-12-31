@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AccordionItem, Accordion, Icon, Link } from "$lib/components";
+  import { Accordion, Icon, Link } from "$lib/components";
 
   const header = "Nutrition";
 </script>
@@ -23,7 +23,7 @@
 <Accordion>
   <h2 slot="header">General Advice</h2>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">First time fighters</div>
 
     <p><i>Do not</i> cut more than 4% of your body weight</p>
@@ -32,9 +32,9 @@
       Cutting weight is an enormous stressor on your body, and you need to ease
       into it to find where your performance maximum is
     </p>
-  </AccordionItem>
+  </Accordion.Item>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">Amateur fighters</div>
 
     <p>Don't cut more than 8% of your body weight</p>
@@ -43,9 +43,9 @@
       Without a professional nutritionist, cutting more than 8% is dangerous,
       especially if you are already lean
     </p>
-  </AccordionItem>
+  </Accordion.Item>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">Diet</div>
 
     <p>
@@ -58,9 +58,9 @@
       Experiment to find what works for you and then <i>stick with it</i> to see
       maxiumum effect. With that stated, here are things that work well for my body:
     </p>
-  </AccordionItem>
+  </Accordion.Item>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">Alcohol</div>
 
     <p>Don't drink any alcohol three weeks out from fight day</p>
@@ -76,13 +76,13 @@
       glass of wine if you're at a dinner party, or a beer if out with friends,
       but avoid liquor likes it's the plague.
     </p>
-  </AccordionItem>
+  </Accordion.Item>
 </Accordion>
 
 <Accordion>
   <h2 slot="header">A collection of resources:</h2>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">Simple recipies</div>
 
     <p>
@@ -104,9 +104,9 @@
     </p>
 
     <p>Greens Salad with Chicken and Thai Style Sweet Chili Sauce</p>
-  </AccordionItem>
+  </Accordion.Item>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">6 Meals a Day for Weight Loss</div>
 
     <p>
@@ -127,9 +127,9 @@
 
       <li>High fiber foods help you <i>feel</i> full for longer</li>
     </ul>
-  </AccordionItem>
+  </Accordion.Item>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">Fight Week Weight Cut Manual</div>
 
     <p>
@@ -151,9 +151,9 @@
       <li>Advice on foods to eat directly after weigh in</li>
       <li>Advice on foods and meals for healthy week-of eating</li>
     </ul>
-  </AccordionItem>
+  </Accordion.Item>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">Intermittent Fasting (16|8 strategy)</div>
 
     <p>
@@ -192,9 +192,9 @@
         </ul>
       </li>
     </ul>
-  </AccordionItem>
+  </Accordion.Item>
 
-  <AccordionItem>
+  <Accordion.Item>
     <div slot="header">Diet-boosting foods</div>
 
     <p>
@@ -227,5 +227,5 @@
         in moderation due to ocean polution
       </li>
     </ul>
-  </AccordionItem>
+  </Accordion.Item>
 </Accordion>
