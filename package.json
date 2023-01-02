@@ -1,6 +1,6 @@
 {
   "name": "fighter-advice",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "keywords": [
     "svelte",
@@ -10,6 +10,7 @@
     "vitest",
     "muaythai",
     "muay-thai",
+    "sanity-studio",
     "sanity"
   ],
   "scripts": {
