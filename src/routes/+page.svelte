@@ -4,7 +4,7 @@
 
   export let data: PageData;
 
-  $: ({ links } = data);
+  $: ({ links, posts } = data);
 </script>
 
 <svelte:head>
@@ -26,6 +26,19 @@
       <a {href}>
         <Icon {icon} />
         <span>{text} {completed === false ? "(In Progress)" : ""}</span>
+      </a>
+    </li>
+  {/each}
+</ul>
+
+<h2>TESTING</h2>
+
+<ul>
+  {#each posts as { id, title, publishedDate } (id)}
+    <li>
+      <a href="/post/{id}">
+        <h3>{title}</h3>
+        <p>{publishedDate}</p>
       </a>
     </li>
   {/each}

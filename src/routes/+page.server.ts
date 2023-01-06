@@ -1,6 +1,7 @@
 import { dev } from "$app/environment";
 
 import type { Icons } from "$types/Icons";
+import type { Post } from "$types/payload-types";
 
 import type { PageServerLoad } from "./$types";
 
@@ -12,9 +13,10 @@ export interface SiteLink {
 }
 export interface PageData {
   links: SiteLink[];
+  posts?: Post[];
 }
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ fetch }) => {
   // NOTE: order of array is important
   const links: SiteLink[] = [
     // { href: "/", text: "Home", completed: true, icon: "mongkong" },
@@ -78,7 +80,12 @@ export const load: PageServerLoad = async () => {
     });
   }
 
+  const res = await fetch("http://localhost:3000/api/posts");
+  const data: { docs: Post[] } = await res.json();
+  const posts = data.docs;
+
   return {
     links,
+    posts,
   } satisfies PageData;
 };
