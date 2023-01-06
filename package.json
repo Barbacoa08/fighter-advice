@@ -10,16 +10,13 @@
     "vitest",
     "muaythai",
     "muay-thai",
-    "sanity-studio",
-    "sanity"
+    "payload-cms",
+    "payloadcms"
   ],
   "scripts": {
-    "all": "pnpm all:app && pnpm all:studio",
-    "all:app": "pnpm clean && pnpm i && pnpm format && pnpm lint && pnpm check && pnpm build && pnpm test",
-    "all:studio": "pnpm -C ./studio all",
+    "all": "pnpm clean && pnpm i && pnpm format && pnpm lint && pnpm check && pnpm build && pnpm test",
     "clean": "rm -rf .netlify .svelte-kit build",
     "start": "vite dev",
-    "start:studio": "pnpm -C ./studio start",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
