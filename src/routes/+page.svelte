@@ -4,7 +4,7 @@
 
   export let data: PageData;
 
-  $: ({ links } = data);
+  $: ({ links, posts } = data);
 </script>
 
 <svelte:head>
@@ -26,6 +26,19 @@
       <a {href}>
         <Icon {icon} />
         <span>{text} {completed === false ? "(In Progress)" : ""}</span>
+      </a>
+    </li>
+  {/each}
+</ul>
+
+<h2>Payload CMS Testing</h2>
+
+<ul class="homepage-links">
+  {#each posts as { id, slug, title, status, icon } (id)}
+    <li>
+      <a href="/post/{slug}">
+        <Icon icon={icon?.value} />
+        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
       </a>
     </li>
   {/each}

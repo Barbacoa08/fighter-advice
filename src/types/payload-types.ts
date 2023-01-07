@@ -9,22 +9,15 @@
 export interface Config {}
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "categories".
- */
-export interface Category {
-  id: string;
-  name?: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
 export interface Post {
   id: string;
   title?: string;
+  slug?: string;
+  icon?: string | Icon;
   author?: string | User;
   publishedDate?: string;
-  category?: string | Category;
   tags?: string[] | Tag[];
   content?: {
     [k: string]: unknown;
@@ -32,6 +25,15 @@ export interface Post {
   status?: "draft" | "published";
   createdAt: string;
   updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "icon".
+ */
+export interface Icon {
+  id: string;
+  name?: string;
+  value?: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
