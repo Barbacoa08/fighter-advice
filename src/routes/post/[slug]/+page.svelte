@@ -1,10 +1,13 @@
 <script lang="ts">
+  import { Serialize } from "$lib/cms-components";
   import type { PageData } from "./$types";
 
   export let data: PageData;
-  $: ({ post } = data);
+  $: ({
+    post: { content = [], title },
+  } = data);
 </script>
 
-<h3>{post.title}</h3>
+<h3>{title}</h3>
 
-<p>{@html post.content}</p>
+<Serialize {content} />

@@ -3,7 +3,7 @@ import { error } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
 export interface PageData {
-  post?: Post;
+  post: Post;
 }
 
 export const load = (async ({ fetch, params }) => {
