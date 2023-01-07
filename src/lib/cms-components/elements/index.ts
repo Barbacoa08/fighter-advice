@@ -1,2 +1,5 @@
-import H2 from "./H2.svelte";
-export { H2 };
+import Link from "./Link.svelte";
+export { Link };
+
+import Text from "./Text.svelte";
+export { Text };
