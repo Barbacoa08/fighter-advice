@@ -1,4 +1,5 @@
 import type { Post } from "$types/payload-types";
+import { error } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
 export interface PageData {
@@ -17,7 +18,14 @@ export const load = (async ({ fetch, params }) => {
         },
       };
     });
-  const post: Post = data.docs.length === 1 ? data.docs[0] : undefined;
+
+  if (!data || data.totalDocs !== 1) {
+    throw error(404, {
+      message: `Post with slug "${params.slug}" not found`,
+    });
+  }
+
+  const post: Post = data.docs[0];
 
   return { post };
 }) satisfies PageServerLoad;
