@@ -31,14 +31,14 @@
   {/each}
 </ul>
 
-<h2>TESTING</h2>
+<h2>Payload CMS Testing</h2>
 
-<ul>
-  {#each posts as { id, title, publishedDate } (id)}
+<ul class="homepage-links">
+  {#each posts as { id, slug, title, status, icon } (id)}
     <li>
-      <a href="/post/{id}">
-        <h3>{title}</h3>
-        <p>{publishedDate}</p>
+      <a href="/post/{slug}">
+        <Icon icon={icon?.value} />
+        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
       </a>
     </li>
   {/each}

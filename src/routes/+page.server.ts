@@ -13,7 +13,7 @@ export interface SiteLink {
 }
 export interface PageData {
   links: SiteLink[];
-  posts?: Post[];
+  posts: Post[];
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
@@ -80,7 +80,13 @@ export const load: PageServerLoad = async ({ fetch }) => {
     });
   }
 
-  const res = await fetch("http://localhost:3000/api/posts");
+  const res = await fetch("http://localhost:3000/api/posts").catch(() => {
+    return {
+      json: () => {
+        return { docs: [] };
+      },
+    };
+  });
   const data: { docs: Post[] } = await res.json();
   const posts = data.docs;
 
