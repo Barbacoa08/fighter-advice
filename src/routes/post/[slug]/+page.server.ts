@@ -6,16 +6,18 @@ export interface PageData {
 }
 
 export const load = (async ({ fetch, params }) => {
-  const res = await fetch(
-    `http://localhost:3000/api/posts/${params.slug}`
-  ).catch(() => {
-    return {
-      json: () => {
-        return undefined;
-      },
-    };
-  });
-  const post: Post = await res.json();
+  const data = await fetch(
+    `http://localhost:3000/api/posts/?where[slug][equals]=${params.slug}`
+  )
+    .then(async (res) => await res.json())
+    .catch(() => {
+      return {
+        json: () => {
+          return undefined;
+        },
+      };
+    });
+  const post: Post = data.docs.length === 1 ? data.docs[0] : undefined;
 
   return { post };
 }) satisfies PageServerLoad;
