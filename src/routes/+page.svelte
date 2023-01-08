@@ -4,7 +4,7 @@
 
   export let data: PageData;
 
-  $: ({ links, posts } = data);
+  $: ({ posts } = data);
 </script>
 
 <svelte:head>
@@ -19,19 +19,6 @@
   and based on my own experience. Helpfulness to others will vary. Note that
   there is overlap between pages.
 </p>
-
-<ul class="homepage-links">
-  {#each links as { href, icon, text, completed } (href)}
-    <li>
-      <a {href}>
-        <Icon {icon} />
-        <span>{text} {completed === false ? "(In Progress)" : ""}</span>
-      </a>
-    </li>
-  {/each}
-</ul>
-
-<h2>Payload CMS Testing</h2>
 
 <ul class="homepage-links">
   {#each posts as { id, slug, title, status, icon } (id)}
