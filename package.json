@@ -9,17 +9,12 @@
     "vite",
     "vitest",
     "muaythai",
-    "muay-thai",
-    "sanity-studio",
-    "sanity"
+    "muay-thai"
   ],
   "scripts": {
-    "all": "pnpm all:app && pnpm all:studio",
-    "all:app": "pnpm clean && pnpm i && pnpm format && pnpm lint && pnpm check && pnpm build && pnpm test",
-    "all:studio": "pnpm -C ./studio all",
+    "all": "pnpm clean && pnpm i && pnpm format && pnpm lint && pnpm check && pnpm build && pnpm test",
     "clean": "rm -rf .netlify .svelte-kit build",
     "start": "vite dev",
-    "start:studio": "pnpm -C ./studio start",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -30,9 +25,6 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "devDependencies": {
-    "@portabletext/svelte": "1.0.1",
-    "@sanity/client": "3.4.1",
-    "@sanity/image-url": "1.0.1",
     "@sveltejs/adapter-netlify": "1.0.0",
     "@sveltejs/kit": "1.0.7",
     "@typescript-eslint/eslint-plugin": "5.48.0",
