@@ -1,3 +1,5 @@
+import { env } from "$lib/utils";
+
 import type { Post } from "$types/payload-types";
 
 import type { PageServerLoad } from "./$types";
@@ -7,7 +9,7 @@ export interface PageData {
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const res = await fetch("http://localhost:3000/api/posts").catch(() => {
+  const res = await fetch(`${env.payload_api}posts`).catch(() => {
     return {
       json: () => {
         return { docs: [] };
