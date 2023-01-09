@@ -12,7 +12,7 @@
     Sleep,
   } from "$lib/icons";
 
-  export let icon: Icons;
+  export let icon: Icons | string | undefined;
 </script>
 
 {#if icon === "bowl"}

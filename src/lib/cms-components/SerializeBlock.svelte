@@ -1,11 +1,11 @@
 <script lang="ts">
+  import type { PostContent } from "$types/PayloadPostTypes";
   import { Serialize } from "./";
   import { Link, Text } from "./elements";
 
-  // TODO: fix the `any` type
-  export let block: any;
+  export let block: PostContent;
 
-  if (!block || (!block.type && !block.children && !block.text)) {
+  if (!block || (!block.type && !block.text)) {
     console.error(
       "SerializeBlock.svelte: `block` is undefined or missing all valid props:",
       block

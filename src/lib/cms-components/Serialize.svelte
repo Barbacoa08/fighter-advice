@@ -1,8 +1,8 @@
 <script lang="ts">
+  import type { PostContent } from "$types/PayloadPostTypes";
   import { SerializeBlock } from ".";
 
-  // TODO: fix the `any` type
-  export let content: any[];
+  export let content: PostContent[];
 </script>
 
 {#each content as block}

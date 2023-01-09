@@ -1,6 +1,7 @@
 <script lang="ts">
-  // TODO: fix the `any` type
-  export let block: any = {};
+  import type { TextPostBlock } from "$types/PayloadPostTypes";
+
+  export let block: TextPostBlock;
   const { text = "", bold, italic, strikethrough, underline } = block;
 </script>
 

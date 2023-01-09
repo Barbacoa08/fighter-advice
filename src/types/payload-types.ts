@@ -5,6 +5,8 @@
  * and re-run `payload generate:types` to regenerate this file.
  */
 
+import type { PostContent } from "./PayloadPostTypes";
+
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Config {}
 /**
@@ -15,13 +17,11 @@ export interface Post {
   id: string;
   title?: string;
   slug?: string;
-  icon?: string | Icon;
+  icon?: Icon;
   author?: string | User;
   publishedDate?: string;
   tags?: string[] | Tag[];
-  content?: {
-    [k: string]: unknown;
-  }[];
+  content?: PostContent[];
   status?: "draft" | "published";
   createdAt: string;
   updatedAt: string;
