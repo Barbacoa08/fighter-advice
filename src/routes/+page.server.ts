@@ -1,4 +1,4 @@
-import { env } from "$lib/utils";
+import { PAYLOAD_CMS_API_URL } from "$env/static/private";
 
 import type { Post } from "$types/payload-types";
 
@@ -9,7 +9,7 @@ export interface PageData {
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const res = await fetch(`${env.payload_api}posts`).catch(() => {
+  const res = await fetch(`${PAYLOAD_CMS_API_URL}posts`).catch(() => {
     return {
       json: () => {
         return { docs: [] };
