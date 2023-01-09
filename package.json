@@ -9,9 +9,7 @@
     "vite",
     "vitest",
     "muaythai",
-    "muay-thai",
-    "payload-cms",
-    "payloadcms"
+    "muay-thai"
   ],
   "scripts": {
     "all": "pnpm clean && pnpm i && pnpm format && pnpm lint && pnpm check && pnpm build && pnpm test",
