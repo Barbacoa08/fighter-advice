@@ -6,6 +6,10 @@ Inspired by Scott Tolinski and his [SvelteKit course](https://levelup.video/tuto
 
 ![cartoon mongkong](./static/favicon-white.png)
 
+## Tech ish
+
+Uses [PayloadCMS](https://payloadcms.com). CMS API and Admin repo can [be found here](https://github.com/Barbacoa08/fighter-advice-cms).
+
 ## hosted via Netlify
 
 [See it in action here](https://fighter-advice.barbajoe.tech/)
