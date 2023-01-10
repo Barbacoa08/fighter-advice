@@ -23,6 +23,12 @@
   <p><Serialize content={block.children} /></p>
 {:else if block.type === "link"}
   <Link {block} />
+{:else if block.type === "ul"}
+  <ul><Serialize content={block.children} /></ul>
+{:else if block.type === "ol"}
+  <ol><Serialize content={block.children} /></ol>
+{:else if block.type === "li"}
+  <li><Serialize content={block.children} /></li>
 {:else}
   <div>Unknown/Invalid block type: {block.type}</div>
 {/if}
