@@ -8,4 +8,4 @@ Inspired by Scott Tolinski and his [SvelteKit course](https://levelup.video/tuto
 
 ## hosted via Netlify
 
-[Temp URL](https://barbajoe-fighter-advice.netlify.app/) ([future URL... maybe](https://fighter-advice.barbajoe.tech/))
+[See it in action here](https://fighter-advice.barbajoe.tech/)
