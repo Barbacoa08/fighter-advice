@@ -22,6 +22,15 @@ export interface Post {
   publishedDate?: string;
   tags?: string[] | Tag[];
   content?: PostContent[];
+  accordions: {
+    accordionheader: string;
+    accordionItems: {
+      accordionitemheader?: string;
+      accordionitemcontent: PostContent[];
+      id?: string;
+    }[];
+    id?: string;
+  }[];
   status?: "draft" | "published";
   createdAt: string;
   updatedAt: string;
