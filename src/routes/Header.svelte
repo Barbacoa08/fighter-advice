@@ -27,10 +27,6 @@
         <!-- TODO: <a href="/my-stuff"><Icon icon="me" /> My Stuff</a> -->
         <a href="/my-stuff">My Stuff</a>
       </li>
-
-      <li>
-        <a href="/nutrition">Nutrition</a>
-      </li>
     {/if}
   </ul>
 </header>
