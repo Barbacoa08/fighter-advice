@@ -5,7 +5,7 @@
 
   export let data: PageData;
   $: ({
-    post: { content = [], title, icon },
+    post: { accordions = [], content = [], title, icon },
   } = data);
 </script>
 
@@ -16,4 +16,4 @@
 
 <h1>{title} <Icon icon={icon?.value} /></h1>
 
-<Serialize {content} />
+<Serialize {accordions} {content} />
