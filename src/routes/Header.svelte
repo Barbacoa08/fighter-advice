@@ -1,9 +1,11 @@
 <script lang="ts">
+  import { dev } from "$app/environment";
   import { page } from "$app/stores";
   import { Link, Logo } from "$lib/components";
 
   $: isHome = $page.url.pathname === "/";
   $: isAbout = $page.url.pathname === "/about";
+  $: isMyStuff = $page.url.pathname === "/my-stuff";
 </script>
 
 <header>
@@ -19,6 +21,13 @@
     <li class:active={isAbout}>
       <a href="/about">About</a>
     </li>
+
+    {#if dev}
+      <li class:active={isMyStuff}>
+        <!-- TODO: <a href="/my-stuff"><Icon icon="me" /> My Stuff</a> -->
+        <a href="/my-stuff">My Stuff</a>
+      </li>
+    {/if}
   </ul>
 </header>
 
