@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { Accordion } from "$lib/components";
-  import AccordionItem from "$lib/components/Accordion/AccordionItem.svelte";
   import type { Post } from "$types/payload-types";
   import type { PostContent } from "$types/PayloadPostTypes";
 
