@@ -1,5 +1,7 @@
-import type { Post } from "$types/payload-types";
 import { error } from "@sveltejs/kit";
+
+import { PAYLOAD_CMS_API_URL } from "$env/static/private";
+import type { Post } from "$types/payload-types";
 import type { PageServerLoad } from "./$types";
 
 export interface PageData {
@@ -8,7 +10,7 @@ export interface PageData {
 
 export const load = (async ({ fetch, params }) => {
   const data = await fetch(
-    `http://localhost:3000/api/posts/?where[slug][equals]=${params.slug}`
+    `${PAYLOAD_CMS_API_URL}posts/?where[slug][equals]=${params.slug}`
   )
     .then(async (res) => await res.json())
     .catch(() => {
