@@ -17,7 +17,14 @@ export const load: PageServerLoad = async ({ fetch }) => {
     };
   });
   const data: { docs: Post[] } = await res.json();
-  const posts = data.docs;
+  const posts = data.docs
+    .filter((post) => !!post.status)
+    .sort((a, b) => {
+      return (
+        new Date(b.publishedDate || 0).getTime() -
+        new Date(a.publishedDate || 0).getTime()
+      );
+    });
 
   return {
     posts,

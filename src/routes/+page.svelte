@@ -22,8 +22,11 @@
 
 <ul class="homepage-links">
   {#each posts as { id, slug, title, status, icon } (id)}
-    <li>
-      <a href="/post/{slug}">
+    <li class:disabled={status === "draft"}>
+      <a
+        href={status === "draft" ? "" : `/post/${slug}`}
+        aria-disabled={status === "draft"}
+      >
         <Icon icon={icon?.value} />
         <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
       </a>
@@ -76,6 +79,16 @@
       border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
       transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
       background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+  }
+
+  li.disabled {
+    transform: none;
+  }
+  li a[aria-disabled="true"],
+  li.disabled a {
+    pointer-events: none;
+    opacity: 0.5;
+    transition: none;
   }
 
   /*
