@@ -15,9 +15,8 @@
 <h1>Welcome to barbajoe's <TextGradient>Fighter Advice</TextGradient></h1>
 
 <p>
-  Below are my recommendations for current fighters. These are purely my opinion
-  and based on my own experience. Helpfulness to others will vary. Note that
-  there is overlap between pages.
+  Every body is different, these are my findings. Helpfulness to others will
+  vary.
 </p>
 
 <ul class="homepage-links">
