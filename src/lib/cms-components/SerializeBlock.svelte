@@ -5,7 +5,7 @@
 
   export let block: PostContent;
 
-  if (!block || (!block.type && !block.text)) {
+  if (!block || (!block.type && !block.text && !block.children.length)) {
     console.error(
       "SerializeBlock.svelte: `block` is undefined or missing all valid props:",
       block
@@ -15,11 +15,11 @@
 
 {#if !!block.text || block.text === ""}
   <Text {block} />
-{:else if !block.type && block.children.length > 0}
-  <Serialize content={block.children} />
 {:else if block.type === "h2"}
   <h2><Serialize content={block.children} /></h2>
 {:else if block.type === "p"}
+  <p><Serialize content={block.children} /></p>
+{:else if !block.type && block.children.length > 0}
   <p><Serialize content={block.children} /></p>
 {:else if block.type === "link"}
   <Link {block} />
