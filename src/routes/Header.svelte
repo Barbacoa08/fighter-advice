@@ -5,9 +5,9 @@
 
   $: isHome = $page.url.pathname === "/";
 
-  $: isAbout = $page.url.pathname === "/about";
-  $: isPosts = $page.url.pathname === "/post";
-  $: isTopics = $page.url.pathname === "/topic";
+  $: isAbout = $page.url.pathname.startsWith("/about");
+  $: isPosts = $page.url.pathname.startsWith("/post");
+  $: isTopics = $page.url.pathname.startsWith("/topic");
 
   $: isMyStuff = $page.url.pathname === "/my-stuff";
 </script>

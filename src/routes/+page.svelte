@@ -62,7 +62,6 @@
   }
 
   ul.homepage-links {
-    list-style-type: none;
     margin-top: 2rem;
     padding: 0;
 
