@@ -22,16 +22,12 @@
       <a href="/">Home</a>
     </li>
 
-    <li class:active={isAbout}>
-      <a href="/about">About</a>
+    <li class:active={isTopics}>
+      <a href="/topic">Topics</a>
     </li>
 
     <li class:active={isPosts}>
       <a href="/post">Posts</a>
-    </li>
-
-    <li class:active={isTopics}>
-      <a href="/topic">Topics</a>
     </li>
 
     {#if dev}
@@ -40,6 +36,10 @@
         <a href="/my-stuff">My Stuff</a>
       </li>
     {/if}
+
+    <li class:active={isAbout}>
+      <a href="/about">About</a>
+    </li>
   </ul>
 </header>
 
