@@ -5,7 +5,10 @@
 
   export let block: PostContent;
 
-  if (!block || (!block.type && !block.text && !block.children.length)) {
+  if (
+    !block ||
+    (!block.type && !block.text && block.text !== "" && !block.children?.length)
+  ) {
     console.error(
       "SerializeBlock.svelte: `block` is undefined or missing all valid props:",
       block

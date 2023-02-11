@@ -1,0 +1,28 @@
+<script lang="ts">
+  import { Icon, TextGradient } from "$lib/components";
+  import type { PageData } from "./+page.server";
+
+  export let data: PageData;
+
+  $: ({ posts } = data);
+</script>
+
+<svelte:head>
+  <title>FA: Posts</title>
+  <meta name="description" content="barbajoe's Fighter Advice Posts list" />
+</svelte:head>
+
+<h1>All <Icon icon="word-bubble" /> <TextGradient>Posts</TextGradient></h1>
+
+<ul>
+  {#each posts as { id, slug, title, status } (id)}
+    <li class:disabled={status === "draft"}>
+      <a
+        href={status === "draft" ? "" : `/post/${slug}`}
+        aria-disabled={status === "draft"}
+      >
+        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
+      </a>
+    </li>
+  {/each}
+</ul>

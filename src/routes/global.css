@@ -44,6 +44,10 @@ h2 {
   border-bottom: 1px solid var(--border-color-gray);
 }
 
+ul {
+  list-style-type: none;
+}
+
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
@@ -52,4 +56,9 @@ code {
 a,
 a:visited {
   color: var(--color-link-text);
+}
+a[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+  text-decoration: none;
 }

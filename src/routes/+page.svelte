@@ -4,7 +4,7 @@
 
   export let data: PageData;
 
-  $: ({ posts } = data);
+  $: ({ posts, topics } = data);
 </script>
 
 <svelte:head>
@@ -19,14 +19,30 @@
   vary.
 </p>
 
+<h2>Last updated Topics</h2>
 <ul class="homepage-links">
-  {#each posts as { id, slug, title, status, icon } (id)}
+  {#each topics as { id, slug, title, status, icon } (id)}
+    <li class:disabled={status === "draft"}>
+      <a
+        href={status === "draft" ? "" : `/topic/${slug}`}
+        aria-disabled={status === "draft"}
+      >
+        <Icon icon={icon?.value} />
+        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
+      </a>
+    </li>
+  {/each}
+</ul>
+
+<h2>Latest Posts</h2>
+<ul class="homepage-links">
+  {#each posts as { id, slug, title, status } (id)}
     <li class:disabled={status === "draft"}>
       <a
         href={status === "draft" ? "" : `/post/${slug}`}
         aria-disabled={status === "draft"}
       >
-        <Icon icon={icon?.value} />
+        <Icon icon="word-bubble" />
         <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
       </a>
     </li>
@@ -46,8 +62,7 @@
   }
 
   ul.homepage-links {
-    list-style-type: none;
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding: 0;
 
     display: flex;
