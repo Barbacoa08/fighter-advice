@@ -20,7 +20,7 @@
       <Icon icon={icon?.value} />
 
       <a
-        href={status === "draft" ? "" : `/post/${slug}`}
+        href={status === "draft" ? "" : `/topic/${slug}`}
         aria-disabled={status === "draft"}
       >
         <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
