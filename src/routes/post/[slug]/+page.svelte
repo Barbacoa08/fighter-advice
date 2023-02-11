@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Serialize } from "$lib/cms-components";
-  import { Icon } from "$lib/components";
+  import { Icon, TextGradient } from "$lib/components";
   import type { PageData } from "./$types";
 
   export let data: PageData;
@@ -14,6 +14,12 @@
   <meta name="description" content={`barbajoe's Fighter Advice on ${title}`} />
 </svelte:head>
 
-<h1>{title} <Icon icon="word-bubble" /> by {author?.name}</h1>
+<h1>
+  <TextGradient>
+    {title}
+  </TextGradient>
+
+  <Icon icon="word-bubble" /> by {author?.name}
+</h1>
 
 <Serialize {accordions} {content} />
