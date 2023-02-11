@@ -25,7 +25,8 @@ export const load: PageServerLoad = async ({ fetch }) => {
         new Date(b.publishedDate || 0).getTime() -
         new Date(a.publishedDate || 0).getTime()
       );
-    });
+    })
+    .slice(0, 5);
 
   const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`).catch(() => {
     return {
@@ -42,7 +43,8 @@ export const load: PageServerLoad = async ({ fetch }) => {
         new Date(b.updatedAt || 0).getTime() -
         new Date(a.updatedAt || 0).getTime()
       );
-    });
+    })
+    .slice(0, 5);
 
   return {
     posts,
