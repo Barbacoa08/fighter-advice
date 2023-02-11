@@ -1,11 +1,12 @@
 import { PAYLOAD_CMS_API_URL } from "$env/static/private";
 
-import type { Post } from "$types/payload-types";
+import type { Post, Topic } from "$types/payload-types";
 
 import type { PageServerLoad } from "./$types";
 
 export interface PageData {
   posts: Post[];
+  topics: Topic[];
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
@@ -25,8 +26,10 @@ export const load: PageServerLoad = async ({ fetch }) => {
         new Date(a.publishedDate || 0).getTime()
       );
     });
+  const topics: Topic[] = [];
 
   return {
     posts,
+    topics,
   } satisfies PageData;
 };
