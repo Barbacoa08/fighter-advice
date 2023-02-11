@@ -10,6 +10,7 @@
     People,
     Scale,
     Sleep,
+    WordBubble,
   } from "$lib/icons";
 
   export let icon: Icons | string | undefined;
@@ -33,6 +34,8 @@
   <Scale class="svg-position" />
 {:else if icon === "sleep"}
   <Sleep class="svg-position" />
+{:else if icon === "word-bubble"}
+  <WordBubble class="svg-position" />
 {:else}
   <p>Unknown Icon: <code>{icon}</code></p>
 {/if}

@@ -33,6 +33,7 @@
   {/each}
 </ul>
 
+<!-- TODO: use WordBubble icon for "latest posts" -->
 <style>
   :root {
     --list-background-color: rgb(34, 34, 34);

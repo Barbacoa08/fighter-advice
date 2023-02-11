@@ -9,4 +9,5 @@ export type Icons =
   | "notebook"
   | "people"
   | "scale"
-  | "sleep";
+  | "sleep"
+  | "word-bubble";

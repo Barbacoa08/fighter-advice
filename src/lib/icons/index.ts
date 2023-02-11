@@ -26,3 +26,6 @@ export { Scale };
 
 import Sleep from "./Sleep.svelte";
 export { Sleep };
+
+import WordBubble from './WordBubble.svelte';
+export { WordBubble };
