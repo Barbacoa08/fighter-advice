@@ -4,7 +4,7 @@
 
   export let data: PageData;
 
-  $: ({ posts } = data);
+  $: ({ posts, topics } = data);
 </script>
 
 <svelte:head>
@@ -19,11 +19,12 @@
   vary.
 </p>
 
+<h2>Latest updated Topics</h2>
 <ul class="homepage-links">
-  {#each posts as { id, slug, title, status, icon } (id)}
+  {#each topics as { id, slug, title, status, icon } (id)}
     <li class:disabled={status === "draft"}>
       <a
-        href={status === "draft" ? "" : `/post/${slug}`}
+        href={status === "draft" ? "" : `/topic/${slug}`}
         aria-disabled={status === "draft"}
       >
         <Icon icon={icon?.value} />
@@ -33,7 +34,21 @@
   {/each}
 </ul>
 
-<!-- TODO: use WordBubble icon for "latest posts" -->
+<h2>Latest updated Posts</h2>
+<ul class="homepage-links">
+  {#each posts as { id, slug, title, status } (id)}
+    <li class:disabled={status === "draft"}>
+      <a
+        href={status === "draft" ? "" : `/topic/${slug}`}
+        aria-disabled={status === "draft"}
+      >
+        <Icon icon="word-bubble" />
+        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
+      </a>
+    </li>
+  {/each}
+</ul>
+
 <style>
   :root {
     --list-background-color: rgb(34, 34, 34);

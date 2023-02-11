@@ -10,15 +10,15 @@ export interface PageData {
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const res = await fetch(`${PAYLOAD_CMS_API_URL}posts`).catch(() => {
+  const postsResult = await fetch(`${PAYLOAD_CMS_API_URL}posts`).catch(() => {
     return {
       json: () => {
         return { docs: [] };
       },
     };
   });
-  const data: { docs: Post[] } = await res.json();
-  const posts = data.docs
+  const postsData: { docs: Post[] } = await postsResult.json();
+  const posts = postsData.docs
     .filter((post) => !!post.status)
     .sort((a, b) => {
       return (
@@ -26,7 +26,23 @@ export const load: PageServerLoad = async ({ fetch }) => {
         new Date(a.publishedDate || 0).getTime()
       );
     });
-  const topics: Topic[] = [];
+
+  const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`).catch(() => {
+    return {
+      json: () => {
+        return { docs: [] };
+      },
+    };
+  });
+  const topicsData: { docs: Topic[] } = await topicsResult.json();
+  const topics: Topic[] = topicsData.docs
+    .filter((topic) => !!topic.status)
+    .sort((a, b) => {
+      return (
+        new Date(b.updatedAt || 0).getTime() -
+        new Date(a.updatedAt || 0).getTime()
+      );
+    });
 
   return {
     posts,
