@@ -45,8 +45,8 @@ h2 {
 }
 
 ul {
-  list-style-type: thai;
-  padding: 0 1.5rem;
+  list-style-type: "- ";
+  padding: 0 12px; /* counter balances the default offset so that the dash lines up with the left content */
 }
 
 code {

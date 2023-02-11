@@ -28,3 +28,19 @@
     </li>
   {/each}
 </ul>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  ul li :first-child {
+    margin: 0.5rem;
+  }
+</style>
