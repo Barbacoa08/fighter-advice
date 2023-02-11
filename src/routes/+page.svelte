@@ -19,7 +19,7 @@
   vary.
 </p>
 
-<h2>Latest updated Topics</h2>
+<h2>Last updated Topics</h2>
 <ul class="homepage-links">
   {#each topics as { id, slug, title, status, icon } (id)}
     <li class:disabled={status === "draft"}>
@@ -34,12 +34,12 @@
   {/each}
 </ul>
 
-<h2>Latest updated Posts</h2>
+<h2>Latest Posts</h2>
 <ul class="homepage-links">
   {#each posts as { id, slug, title, status } (id)}
     <li class:disabled={status === "draft"}>
       <a
-        href={status === "draft" ? "" : `/topic/${slug}`}
+        href={status === "draft" ? "" : `/post/${slug}`}
         aria-disabled={status === "draft"}
       >
         <Icon icon="word-bubble" />
@@ -63,7 +63,7 @@
 
   ul.homepage-links {
     list-style-type: none;
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding: 0;
 
     display: flex;

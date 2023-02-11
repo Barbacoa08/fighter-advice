@@ -4,7 +4,11 @@
   import { Link, Logo } from "$lib/components";
 
   $: isHome = $page.url.pathname === "/";
+
   $: isAbout = $page.url.pathname === "/about";
+  $: isPosts = $page.url.pathname === "/post";
+  $: isTopics = $page.url.pathname === "/topic";
+
   $: isMyStuff = $page.url.pathname === "/my-stuff";
 </script>
 
@@ -20,6 +24,14 @@
 
     <li class:active={isAbout}>
       <a href="/about">About</a>
+    </li>
+
+    <li class:active={isPosts}>
+      <a href="/post">Posts</a>
+    </li>
+
+    <li class:active={isTopics}>
+      <a href="/topic">Topics</a>
     </li>
 
     {#if dev}
