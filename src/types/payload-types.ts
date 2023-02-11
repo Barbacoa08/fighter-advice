@@ -64,7 +64,7 @@ export interface Topic {
   id: string;
   title?: string;
   slug?: string;
-  icon?: string | Icon;
+  icon?: Icon;
   tags?: string[] | Tag[];
   content?: PostContent[];
   accordions: {
