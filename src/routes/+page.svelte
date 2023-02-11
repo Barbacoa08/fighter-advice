@@ -36,14 +36,17 @@
 
 <h2>Latest Posts</h2>
 <ul class="homepage-links">
-  {#each posts as { id, slug, title, status } (id)}
+  {#each posts as { id, slug, title, status, author } (id)}
     <li class:disabled={status === "draft"}>
       <a
         href={status === "draft" ? "" : `/post/${slug}`}
         aria-disabled={status === "draft"}
       >
         <Icon icon="word-bubble" />
-        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
+        <span>
+          {title}
+          {status === "draft" ? "(In Progress)" : `by "${author?.name}"`}
+        </span>
       </a>
     </li>
   {/each}

@@ -5,7 +5,7 @@
 
   export let data: PageData;
   $: ({
-    post: { accordions = [], content = [], title },
+    post: { accordions = [], content = [], title, author },
   } = data);
 </script>
 
@@ -14,6 +14,6 @@
   <meta name="description" content={`barbajoe's Fighter Advice on ${title}`} />
 </svelte:head>
 
-<h1>{title} <Icon icon="word-bubble" /></h1>
+<h1>{title} <Icon icon="word-bubble" /> by {author?.name}</h1>
 
 <Serialize {accordions} {content} />

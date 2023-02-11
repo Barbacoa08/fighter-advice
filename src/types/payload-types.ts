@@ -26,7 +26,7 @@ export interface Post {
   id: string;
   title?: string;
   slug?: string;
-  author?: string | User;
+  author?: User;
   publishedDate?: string;
   tags?: string[] | Tag[];
   content?: PostContent[];
