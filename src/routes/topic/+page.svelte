@@ -27,9 +27,9 @@
       </a>
 
       <span>
-        Last Updated: {Intl.DateTimeFormat("ban", { dateStyle: "medium" }).format(
-          new Date(updatedAt)
-        )}
+        Last Updated: {Intl.DateTimeFormat("ban", {
+          dateStyle: "medium",
+        }).format(new Date(updatedAt))}
       </span>
     </li>
   {/each}
