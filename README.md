@@ -13,3 +13,7 @@ Uses [PayloadCMS](https://payloadcms.com). CMS API and Admin repo can [be found 
 ## hosted via Netlify
 
 [See it in action here](https://fighter-advice.barbajoe.tech/)
+
+## analytics by [Cronitor RUM](https://cronitor.io/real-user-monitoring)
+
+Which is a privacy first, GDPR Compliant analytics provider, [built by the creator of Panelbear](https://panelbear.com/blog/cronitor-rum-out-of-beta/).
