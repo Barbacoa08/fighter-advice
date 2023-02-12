@@ -15,14 +15,23 @@
 <h1>All <Icon icon="word-bubble" /> <TextGradient>Posts</TextGradient></h1>
 
 <ul>
-  {#each posts as { id, slug, title, status } (id)}
+  {#each posts as { id, slug, title, status, author, publishedDate, updatedAt } (id)}
     <li class:disabled={status === "draft"}>
       <a
         href={status === "draft" ? "" : `/post/${slug}`}
         aria-disabled={status === "draft"}
       >
-        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
+        <span>
+          {title}
+          {status === "draft" ? "(In Progress)" : `by "${author?.name}"`}
+        </span>
       </a>
+
+      <span>
+        Posted on: {Intl.DateTimeFormat("ban", {
+          dateStyle: "medium",
+        }).format(new Date(publishedDate || updatedAt))}
+      </span>
     </li>
   {/each}
 </ul>

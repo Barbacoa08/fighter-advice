@@ -15,7 +15,7 @@
 <h1>Welcome to barbajoe's <TextGradient>Fighter Advice</TextGradient></h1>
 
 <p>
-  Every body is different, these are my findings. Helpfulness to others will
+  Every body is different, but these are my findings. Helpfulness to others will
   vary.
 </p>
 
@@ -36,14 +36,17 @@
 
 <h2>Latest Posts</h2>
 <ul class="homepage-links">
-  {#each posts as { id, slug, title, status } (id)}
+  {#each posts as { id, slug, title, status, author } (id)}
     <li class:disabled={status === "draft"}>
       <a
         href={status === "draft" ? "" : `/post/${slug}`}
         aria-disabled={status === "draft"}
       >
         <Icon icon="word-bubble" />
-        <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
+        <span>
+          {title}
+          {status === "draft" ? "(In Progress)" : `by "${author?.name}"`}
+        </span>
       </a>
     </li>
   {/each}
@@ -62,6 +65,7 @@
   }
 
   ul.homepage-links {
+    list-style: none;
     margin-top: 2rem;
     padding: 0;
 

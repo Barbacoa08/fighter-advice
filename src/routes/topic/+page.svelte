@@ -15,7 +15,7 @@
 <h1>All <TextGradient>Topics</TextGradient></h1>
 
 <ul>
-  {#each topics as { id, slug, title, status, icon } (id)}
+  {#each topics as { id, slug, title, status, icon, updatedAt } (id)}
     <li class:disabled={status === "draft"}>
       <Icon icon={icon?.value} />
 
@@ -25,6 +25,28 @@
       >
         <span>{title} {status === "draft" ? "(In Progress)" : ""}</span>
       </a>
+
+      <span>
+        Last Updated: {Intl.DateTimeFormat("ban", {
+          dateStyle: "medium",
+        }).format(new Date(updatedAt))}
+      </span>
     </li>
   {/each}
 </ul>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  ul li :first-child {
+    margin: 0.5rem;
+  }
+</style>
