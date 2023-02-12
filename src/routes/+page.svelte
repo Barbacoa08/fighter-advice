@@ -15,7 +15,7 @@
 <h1>Welcome to barbajoe's <TextGradient>Fighter Advice</TextGradient></h1>
 
 <p>
-  Every body is different, these are my findings. Helpfulness to others will
+  Every body is different, but these are my findings. Helpfulness to others will
   vary.
 </p>
 
