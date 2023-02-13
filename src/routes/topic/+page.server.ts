@@ -1,26 +1,13 @@
-import { PAYLOAD_CMS_API_URL } from "$env/static/private";
+import { getTopics } from "$lib/server/topics";
 
 import type { Topic } from "$types/payload-types";
-
 import type { PageServerLoad } from "./$types";
 
 export interface PageData {
   topics: Topic[];
 }
 
-export const load: PageServerLoad = async ({ fetch }) => {
-  const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`);
-  const topicsData: { docs: Topic[] } = await topicsResult.json();
-  const topics: Topic[] = topicsData.docs
-    .filter((topic) => !!topic.status)
-    .sort((a, b) => {
-      return (
-        new Date(b.updatedAt || 0).getTime() -
-        new Date(a.updatedAt || 0).getTime()
-      );
-    });
-
-  return {
-    topics,
-  } satisfies PageData;
-};
+export const load: PageServerLoad = async ({ fetch }) =>
+  ({
+    topics: await getTopics(fetch),
+  } satisfies PageData);
