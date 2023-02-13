@@ -1,5 +1,8 @@
 export * from "./Accordion";
 
+import CollectionError from "./CollectionError.svelte";
+export { CollectionError };
+
 import Icon from "./Icon.svelte";
 export { Icon };
 

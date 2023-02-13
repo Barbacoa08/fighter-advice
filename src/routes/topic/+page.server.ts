@@ -9,13 +9,7 @@ export interface PageData {
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`).catch(() => {
-    return {
-      json: () => {
-        return { docs: [] };
-      },
-    };
-  });
+  const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`);
   const topicsData: { docs: Topic[] } = await topicsResult.json();
   const topics: Topic[] = topicsData.docs
     .filter((topic) => !!topic.status)

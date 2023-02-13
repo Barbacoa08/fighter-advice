@@ -11,15 +11,7 @@ export interface PageData {
 export const load = (async ({ fetch, params }) => {
   const data = await fetch(
     `${PAYLOAD_CMS_API_URL}posts/?where[slug][equals]=${params.slug}`
-  )
-    .then(async (res) => await res.json())
-    .catch(() => {
-      return {
-        json: () => {
-          return undefined;
-        },
-      };
-    });
+  ).then(async (res) => await res.json());
 
   if (!data || data.totalDocs !== 1) {
     throw error(404, {
