@@ -10,13 +10,7 @@ export interface PageData {
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const postsResult = await fetch(`${PAYLOAD_CMS_API_URL}posts`).catch(() => {
-    return {
-      json: () => {
-        return { docs: [] };
-      },
-    };
-  });
+  const postsResult = await fetch(`${PAYLOAD_CMS_API_URL}posts`);
   const postsData: { docs: Post[] } = await postsResult.json();
   const posts = postsData.docs
     .filter((post) => !!post.status)
@@ -28,13 +22,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
     })
     .slice(0, 5);
 
-  const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`).catch(() => {
-    return {
-      json: () => {
-        return { docs: [] };
-      },
-    };
-  });
+  const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`);
   const topicsData: { docs: Topic[] } = await topicsResult.json();
   const topics: Topic[] = topicsData.docs
     .filter((topic) => !!topic.status)
