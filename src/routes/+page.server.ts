@@ -1,7 +1,7 @@
-import { PAYLOAD_CMS_API_URL } from "$env/static/private";
+import { getPosts } from "$lib/server/posts";
+import { getTopics } from "$lib/server/topics";
 
 import type { Post, Topic } from "$types/payload-types";
-
 import type { PageServerLoad } from "./$types";
 
 export interface PageData {
@@ -10,41 +10,9 @@ export interface PageData {
 }
 
 export const load: PageServerLoad = async ({ fetch }) => {
-  const postsResult = await fetch(`${PAYLOAD_CMS_API_URL}posts`).catch(() => {
-    return {
-      json: () => {
-        return { docs: [] };
-      },
-    };
-  });
-  const postsData: { docs: Post[] } = await postsResult.json();
-  const posts = postsData.docs
-    .filter((post) => !!post.status)
-    .sort((a, b) => {
-      return (
-        new Date(b.publishedDate || 0).getTime() -
-        new Date(a.publishedDate || 0).getTime()
-      );
-    })
-    .slice(0, 5);
+  const posts = (await getPosts(fetch)).slice(0, 5);
 
-  const topicsResult = await fetch(`${PAYLOAD_CMS_API_URL}topics`).catch(() => {
-    return {
-      json: () => {
-        return { docs: [] };
-      },
-    };
-  });
-  const topicsData: { docs: Topic[] } = await topicsResult.json();
-  const topics: Topic[] = topicsData.docs
-    .filter((topic) => !!topic.status)
-    .sort((a, b) => {
-      return (
-        new Date(b.updatedAt || 0).getTime() -
-        new Date(a.updatedAt || 0).getTime()
-      );
-    })
-    .slice(0, 5);
+  const topics = (await getTopics(fetch)).slice(0, 5);
 
   return {
     posts,

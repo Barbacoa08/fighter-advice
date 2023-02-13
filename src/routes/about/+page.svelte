@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TextGradient } from "$lib/components";
+  import { Link, TextGradient } from "$lib/components";
 </script>
 
 <svelte:head>
@@ -17,3 +17,12 @@
 </p>
 
 <p>I hope you find Fighter Advice useful!</p>
+
+<p>
+  If you'd like to make a request or describe a bug, please <Link
+    href="https://github.com/Barbacoa08/fighter-advice/issues"
+    isExternal
+  >
+    visit this link
+  </Link> and click "New Issue".
+</p>
