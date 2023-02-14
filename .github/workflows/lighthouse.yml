@@ -10,3 +10,4 @@ jobs:
         with:
           urls: "https://fighter-advice.barbajoe.tech/"
           configPath: "./lighthouserc.json"
+          uploadArtifacts: true
