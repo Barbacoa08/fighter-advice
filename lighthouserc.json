@@ -2,7 +2,17 @@
   "ci": {
     "assert": {
       "assertions": {
-        "first-contentful-paint": ["error", { "minScore": 0.6 }]
+        "accessibility": ["error", { "minScore": 0.8 }],
+        "best-practices": ["error", { "minScore": 0.8 }],
+        "seo": ["error", { "minScore": 0.8 }],
+
+        "first-meaningful-paint": ["error", { "minScore": 0.8 }],
+        "speed-index": ["error", { "minScore": 0.8 }],
+        "errors-in-console": ["error", { "minScore": 1 }],
+        "cumulative-layout-shift": ["error", { "minScore": 1 }],
+        "is-on-https": ["error", { "minScore": 0.8 }],
+        "interactive": ["error", { "minScore": 0.8 }],
+        "redirects": ["error", { "minScore": 1 }]
       }
     }
   }
