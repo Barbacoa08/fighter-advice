@@ -25,4 +25,5 @@ jobs:
           urls: |
             ${{ steps.netlify.outputs.url }}
             ${{ steps.netlify.outputs.url }}/post/
+            ${{ steps.netlify.outputs.url }}/topic/
           uploadArtifacts: true
