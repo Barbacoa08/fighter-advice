@@ -8,5 +8,5 @@ jobs:
       - name: Run Lighthouse on urls and validate with lighthouserc
         uses: treosh/lighthouse-ci-action@v9
         with:
-          urls: "https://exterkamp.codes/"
+          urls: "https://fighter-advice.barbajoe.tech/"
           configPath: "./lighthouserc.json"
