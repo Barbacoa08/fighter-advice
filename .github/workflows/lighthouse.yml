@@ -1,0 +1,17 @@
+name: Lighthouse Prod Check
+on: push
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Audit core URLs on PROD
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            "https://fighter-advice.barbajoe.tech/"
+            "https://fighter-advice.barbajoe.tech/post/"
+            "https://fighter-advice.barbajoe.tech/topic/"
+          configPath: "./lighthouserc-prod.json"
+          uploadArtifacts: true
