@@ -15,4 +15,3 @@ jobs:
             "https://fighter-advice.barbajoe.tech/topic/"
           configPath: "./lighthouserc-prod.json"
           uploadArtifacts: true
-          temporaryPublicStorage: true
