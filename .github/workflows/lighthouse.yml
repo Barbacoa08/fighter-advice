@@ -1,13 +1,17 @@
-name: Lighthouse
-on: push
+name: Lighthouse Prod Check
+on: pull_request
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - name: Run Lighthouse on urls and validate with lighthouserc
+      - name: Audit core URLs on PROD
         uses: treosh/lighthouse-ci-action@v9
         with:
-          urls: "https://fighter-advice.barbajoe.tech/"
+          urls: |
+            "https://fighter-advice.barbajoe.tech/"
+            "https://fighter-advice.barbajoe.tech/post/"
+            "https://fighter-advice.barbajoe.tech/topic/"
           configPath: "./lighthouserc.json"
           uploadArtifacts: true
