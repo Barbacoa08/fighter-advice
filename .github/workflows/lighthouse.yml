@@ -1,5 +1,5 @@
 name: Lighthouse Prod Check
-on: deployment
+on: push
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
@@ -13,5 +13,6 @@ jobs:
             "https://fighter-advice.barbajoe.tech/"
             "https://fighter-advice.barbajoe.tech/post/"
             "https://fighter-advice.barbajoe.tech/topic/"
-          configPath: "./lighthouserc.json"
+          configPath: "./lighthouserc-prod.json"
           uploadArtifacts: true
+          temporaryPublicStorage: true

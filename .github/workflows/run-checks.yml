@@ -1,5 +1,5 @@
 name: CI (lint+build+tests)
-on: [push]
+on: [pull_request]
 jobs:
   build:
     name: install PNPM, then run `pnpm all`
