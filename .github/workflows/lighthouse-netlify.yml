@@ -1,7 +1,7 @@
-name: Lighthouse CI for Netlify sites
+name: Lighthouse CI with Netlify
 on: pull_request
 jobs:
-  build:
+  lighthouse:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
         id: netlify
         with:
           site_name: "barbajoe-fighter-advice"
-      - name: Audit URLs using Lighthouse
+      - name: Audit core URLs on DP
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
