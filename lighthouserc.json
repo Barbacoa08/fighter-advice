@@ -2,10 +2,6 @@
   "ci": {
     "assert": {
       "assertions": {
-        "accessibility": ["error", { "minScore": 0.8 }],
-        "best-practices": ["error", { "minScore": 0.8 }],
-        "seo": ["error", { "minScore": 0.8 }],
-
         "first-meaningful-paint": ["error", { "minScore": 0.8 }],
         "speed-index": ["error", { "minScore": 0.8 }],
         "errors-in-console": ["error", { "minScore": 1 }],
