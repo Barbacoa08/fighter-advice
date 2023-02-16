@@ -1,6 +1,3 @@
-import { getPosts } from "$lib/server/posts";
-import { getTopics } from "$lib/server/topics";
-
 import type { Post, Topic } from "$types/payload-types";
 import type { PageServerLoad } from "./$types";
 
@@ -9,13 +6,11 @@ export interface PageData {
   topics: Topic[];
 }
 
-export const load: PageServerLoad = async ({ fetch }) => {
-  const posts = (await getPosts(fetch)).slice(0, 5);
-
-  const topics = (await getTopics(fetch)).slice(0, 5);
+export const load: PageServerLoad = async ({ parent }) => {
+  const { posts, topics } = await parent();
 
   return {
-    posts,
-    topics,
+    posts: posts.slice(0, 5),
+    topics: topics.slice(0, 5),
   } satisfies PageData;
 };
