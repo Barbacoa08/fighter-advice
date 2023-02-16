@@ -13,6 +13,8 @@
 </script>
 
 <header>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <Link aria-label="Homepage">
     <Logo />
   </Link>
@@ -45,7 +47,7 @@
 
 <style>
   :root {
-    --header-background-color: white;
+    --header-background-color: #ffffff;
     --color-link-text-active: #0000ee;
   }
   @media (prefers-color-scheme: dark) {
@@ -89,5 +91,27 @@
   }
   header ul li.active a {
     color: var(--color-link-text-active);
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+
+    background-color: var(--header-background-color);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255 255 255 / 6%);
+    padding: 0.5rem 1.5rem;
+    opacity: 0.9;
+  }
+  .skip-link:focus {
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    overflow: visible;
   }
 </style>

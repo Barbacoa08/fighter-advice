@@ -8,7 +8,7 @@
 <div class="body-main-wrapper">
   <Header />
 
-  <main>
+  <main id="main-content">
     <slot />
   </main>
 
