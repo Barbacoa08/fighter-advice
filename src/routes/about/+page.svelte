@@ -30,5 +30,11 @@
 <p>
   You can also <Link isExternal href="https://discord.gg/V3HhJkP7mG">
     join the Fighter Advice Discord
-  </Link> if you'd like to talk to me or other users.
+  </Link> if you'd like to talk to me or other users. If the invite link is expired,
+  please <Link
+    href="https://github.com/Barbacoa08/fighter-advice/issues"
+    isExternal
+  >
+    create an issue
+  </Link>.
 </p>
