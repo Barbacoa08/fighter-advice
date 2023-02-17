@@ -5,6 +5,11 @@
   export let data: PageData;
 
   $: ({ posts, topics } = data);
+
+  const isPostDisabled = (status?: string, publishedDate?: string) =>
+    status !== "published" ||
+    !publishedDate ||
+    new Date(publishedDate) > new Date();
 </script>
 
 <svelte:head>
@@ -36,16 +41,18 @@
 
 <h2>Latest Posts</h2>
 <ul class="homepage-links">
-  {#each posts as { id, slug, title, status, author } (id)}
-    <li class:disabled={status === "draft"}>
+  {#each posts as { id, slug, title, status, author, publishedDate } (id)}
+    <li class:disabled={isPostDisabled(status, publishedDate)}>
       <a
-        href={status === "draft" ? "" : `/post/${slug}`}
-        aria-disabled={status === "draft"}
+        href={isPostDisabled(status, publishedDate) ? "" : `/post/${slug}`}
+        aria-disabled={isPostDisabled(status, publishedDate)}
       >
         <Icon icon="word-bubble" />
         <span>
           {title}
-          {status === "draft" ? "(In Progress)" : `by "${author?.name}"`}
+          {isPostDisabled(status, publishedDate)
+            ? "(In Progress)"
+            : `by "${author?.name}"`}
         </span>
       </a>
     </li>
