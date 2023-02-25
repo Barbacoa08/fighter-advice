@@ -14,6 +14,11 @@
 
 <h1>All <TextGradient>Topics</TextGradient></h1>
 
+<p>
+  An evergrowning list of insights. Topics are updated whenever I find new
+  information that extends or changes my understanding of a topic.
+</p>
+
 <ul>
   {#each topics as { id, slug, title, status, icon, updatedAt } (id)}
     <li class:disabled={status === "draft"}>

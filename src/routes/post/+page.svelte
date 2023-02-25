@@ -14,6 +14,11 @@
 
 <h1>All <Icon icon="word-bubble" /> <TextGradient>Posts</TextGradient></h1>
 
+<p>
+  Thoughts and musings. Ideas and opinions. Personal experiences and humble
+  opinions.
+</p>
+
 <ul>
   {#each posts as { id, slug, title, status, author, publishedDate, updatedAt } (id)}
     <li class:disabled={status === "draft"}>
