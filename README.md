@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e6697a39-5674-4bbe-93c9-e92e482c2316/deploy-status)](https://app.netlify.com/sites/barbajoe-fighter-advice/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e6697a39-5674-4bbe-93c9-e92e482c2316/deploy-status)](https://app.netlify.com/sites/barbajoe-fighter-advice/deploys) ![CMS](https://cronitor.io/badges/TzJIUD/production/xTL-dCQnXsn_-_vITkMQ-GtBnio.svg)
 
 # fighter-advice
 
