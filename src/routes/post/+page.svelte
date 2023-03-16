@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Icon, TextGradient } from "$lib/components";
+  import { formatDate } from "$lib/utils/formatDate";
   import type { PageData } from "../+layout.server";
 
   export let data: PageData;
@@ -33,9 +34,7 @@
       </a>
 
       <span>
-        Posted on: {Intl.DateTimeFormat("ban", {
-          dateStyle: "medium",
-        }).format(new Date(publishedDate || updatedAt))}
+        Posted on: {formatDate(publishedDate || updatedAt)}
       </span>
     </li>
   {/each}
