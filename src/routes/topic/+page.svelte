@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Icon, TextGradient } from "$lib/components";
+  import { formatDate } from "$lib/utils/formatDate";
   import type { PageData } from "../+layout.server";
 
   export let data: PageData;
@@ -32,9 +33,7 @@
       </a>
 
       <span>
-        Last Updated: {Intl.DateTimeFormat("ban", {
-          dateStyle: "medium",
-        }).format(new Date(updatedAt))}
+        Last Updated: {formatDate(updatedAt)}
       </span>
     </li>
   {/each}
