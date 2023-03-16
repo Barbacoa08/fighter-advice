@@ -10,8 +10,16 @@ export interface PageData {
 }
 
 export const load = (async ({ fetch }) => {
-  const posts = await getPosts(fetch);
-  const topics = await getTopics(fetch);
+  let posts: Post[] = [];
+  let topics: Topic[] = [];
+
+  try {
+    posts = await getPosts(fetch);
+    topics = await getTopics(fetch);
+  } catch (error) {
+    // HACK: use sveltekit's built in error handling and pass a useful error message to the client
+    console.error(error);
+  }
 
   return {
     posts,
