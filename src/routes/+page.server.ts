@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({ parent }) => {
   const { posts, topics } = await parent();
 
   if (posts.length === 0 || topics.length === 0) {
-    throw error(404, "No posts or topics found");
+    throw error(503, "Server Error: No posts or topics found");
   }
 
   return {
