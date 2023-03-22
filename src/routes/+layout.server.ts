@@ -17,8 +17,6 @@ export const load = (async ({ fetch }) => {
     posts = await getPosts(fetch);
     topics = await getTopics(fetch);
   } catch (error) {
-    // HACK: use sveltekit's built in error handling and pass a useful error message to the client
-    // link to issue: https://github.com/Barbacoa08/fighter-advice/issues/69
     console.error(error);
   }
 

@@ -21,6 +21,8 @@
 
 <p>Please come back later and hopefully I'll have fixed it &#128517;</p>
 
+<p>{$page.status} - {$page.error?.message}</p>
+
 <p>
   If you've seen this page multiple times, <Link
     href="https://github.com/Barbacoa08/fighter-advice/issues"
