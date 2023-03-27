@@ -18,14 +18,14 @@
 
     <slot />
 
-    <!-- svelte-ignore a11y-autofocus -->
-    <button autofocus on:click={() => dialog.close()}>close modal</button>
+    <button on:click={() => dialog.close()}> close </button>
   </div>
 </dialog>
 
 <style>
   dialog {
-    max-width: 32em;
+    width: 32em;
+    height: 30rem;
     border-radius: 0.2em;
     border: none;
     padding: 0;
@@ -61,6 +61,13 @@
     }
   }
   button {
-    display: block;
+    font-size: var(--font-size-base);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--color-link-text);
+    border: 1px solid var(--border-color-gray);
+    border-radius: 0.2em;
+    margin-top: 1rem;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
   }
 </style>

@@ -11,7 +11,7 @@
 <Modal bind:showModal>
   <h2 slot="header">Topic + Post Search</h2>
 
-  <Search bind:value />
+  <Search autofocus label="Search Titles and Tags" bind:value />
 
   <ul class="definition-list">
     <li>of or relating to modality in logic</li>
@@ -27,10 +27,6 @@
     </li>
     <li>of or relating to a statistical mode</li>
   </ul>
-
-  <a href="https://www.merriam-webster.com/dictionary/modal">
-    merriam-webster.com
-  </a>
 </Modal>
 
 <style>
