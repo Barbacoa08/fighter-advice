@@ -1,14 +1,19 @@
 <script lang="ts">
+  import Search from "svelte-search";
   import { Modal } from "$lib/components";
+
   let showModal = false;
+  let value = "";
 </script>
 
 <button on:click={() => (showModal = true)}>Search</button>
 
 <Modal bind:showModal>
-  <h2 slot="header">modal</h2>
+  <h2 slot="header">Topic + Post Search</h2>
 
-  <ol class="definition-list">
+  <Search bind:value />
+
+  <ul class="definition-list">
     <li>of or relating to modality in logic</li>
     <li>
       containing provisions as to the mode of procedure or the manner of taking
@@ -21,7 +26,7 @@
       characteristically indicating predication
     </li>
     <li>of or relating to a statistical mode</li>
-  </ol>
+  </ul>
 
   <a href="https://www.merriam-webster.com/dictionary/modal">
     merriam-webster.com
