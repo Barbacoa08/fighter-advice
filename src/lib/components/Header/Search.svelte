@@ -44,7 +44,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<button on:click={() => (showModal = true)}>Search</button>
+<button aria-label="Search, ⌘ K" on:click={() => (showModal = true)} />
 
 <Modal bind:showModal>
   <h2 slot="header">Topic + Post Search</h2>
@@ -72,9 +72,16 @@
   button {
     color: var(--color-link-text);
     background: none;
-    border: none;
+    border: 1px solid var(--color-link-text);
     cursor: pointer;
-    font-size: 1rem;
-    padding: 0;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+  button::before {
+    content: "🔍";
+    margin-right: 0.5rem;
+  }
+  button::after {
+    content: "⌘ K";
   }
 </style>

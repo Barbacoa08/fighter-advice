@@ -75,12 +75,13 @@
 
   header ul {
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
   }
 
   header ul li {
-    padding: 0.5rem;
+    padding: 0 0.5rem;
     border-bottom: 2px solid transparent;
     color: var(--color-link-text-active);
   }
