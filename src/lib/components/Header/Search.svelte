@@ -24,7 +24,9 @@
       : terms.filter(
           (term) =>
             term.title.toLowerCase().includes(value.toLowerCase()) ||
-            term.tags.includes(value.toLowerCase())
+            term.tags.filter((tag) =>
+              tag.toLowerCase().includes(value.toLowerCase())
+            ).length
         );
 </script>
 
