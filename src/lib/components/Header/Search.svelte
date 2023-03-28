@@ -21,8 +21,11 @@
     }
   };
 
-  // pull search terms post initial render to avoid blocking
+  let osKey = " ";
   onMount(async () => {
+    osKey = navigator.userAgent.includes("Mac") ? "⌘" : "CTRL";
+
+    // pull search terms post initial render to avoid blocking
     const response = await fetch("/search", {
       headers: {
         "content-type": "application/json",
@@ -44,7 +47,9 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<button aria-label="Search, ⌘ K" on:click={() => (showModal = true)} />
+<button aria-label="Search, ⌘ K" on:click={() => (showModal = true)}>
+  {osKey} K
+</button>
 
 <Modal bind:showModal>
   <h2 slot="header">Topic + Post Search</h2>
@@ -80,8 +85,5 @@
   button::before {
     content: "🔍";
     margin-right: 0.5rem;
-  }
-  button::after {
-    content: "⌘ K";
   }
 </style>
