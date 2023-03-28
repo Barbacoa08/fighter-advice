@@ -2,6 +2,7 @@
   import { dev } from "$app/environment";
   import { page } from "$app/stores";
   import { Link, Logo } from "$lib/components";
+  import Search from "./Search.svelte";
 
   $: isHome = $page.url.pathname === "/";
 
@@ -42,6 +43,10 @@
     <li class:active={isAbout}>
       <a href="/about">About</a>
     </li>
+
+    <li>
+      <Search />
+    </li>
   </ul>
 </header>
 
@@ -70,12 +75,13 @@
 
   header ul {
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
   }
 
   header ul li {
-    padding: 0.5rem;
+    padding: 0 0.5rem;
     border-bottom: 2px solid transparent;
     color: var(--color-link-text-active);
   }
