@@ -5,12 +5,7 @@ import type { RequestHandler } from "./$types";
 import { getPosts } from "$lib/server/posts";
 import { getTopics } from "$lib/server/topics";
 import type { Post, Topic } from "$types/payload-types";
-
-interface Result {
-  title: string;
-  url: string;
-  tags: string[];
-}
+import type { TermsResult } from "$types/SearchAPI";
 
 /**
  * This call takes ~10ms
@@ -19,7 +14,7 @@ interface Result {
  * live in the `load` function, but I want to play with a `+server.ts` file and
  * see how it works.
  *
- * @returns {Promise<Result[]>}
+ * @returns {Promise<TermsResult[]>}
  */
 export const GET = (async () => {
   let posts: Post[] = [];
@@ -32,7 +27,7 @@ export const GET = (async () => {
     console.error(error);
   }
 
-  const results: Result[] = [];
+  const results: TermsResult[] = [];
   posts.forEach((post) => {
     const { title, slug, tags, status, publishedDate } = post;
 
