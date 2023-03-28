@@ -28,7 +28,7 @@ export interface Post {
   slug?: string;
   author?: User;
   publishedDate?: string;
-  tags?: string[] | Tag[];
+  tags?: Tag[];
   content?: PostContent[];
   accordions: {
     accordionheader: string;
@@ -65,7 +65,7 @@ export interface Topic {
   title?: string;
   slug?: string;
   icon?: Icon;
-  tags?: string[] | Tag[];
+  tags?: Tag[];
   content?: PostContent[];
   accordions: {
     accordionheader: string;
@@ -79,4 +79,5 @@ export interface Topic {
   status?: "draft" | "published";
   createdAt: string;
   updatedAt: string;
+  publishedDate?: string;
 }
