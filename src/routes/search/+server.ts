@@ -32,9 +32,6 @@ export const GET = (async () => {
     console.error(error);
   }
 
-  // TODO: pull text from `h` tags and run `setKeywords` on them?
-  // see `CatEmotionImage.tsx` line 64, and `keyword-extractor` package
-
   const results: Result[] = [];
   posts.forEach((post) => {
     const { title, slug, tags, status, publishedDate } = post;
