@@ -9,6 +9,18 @@
   let value = "";
   let terms: TermsResult[] = [];
 
+  let prevKey = "";
+  const handleKeydown = (event: { key: string }) => {
+    if (showModal) return;
+
+    if (event.key === "k" && (prevKey === "Control" || prevKey === "Meta")) {
+      showModal = true;
+      prevKey = "";
+    } else {
+      prevKey = event.key;
+    }
+  };
+
   // pull search terms post initial render to avoid blocking
   onMount(async () => {
     const response = await fetch("/search", {
@@ -29,6 +41,8 @@
             ).length
         );
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <button on:click={() => (showModal = true)}>Search</button>
 
