@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import Search from "svelte-search";
 
-  import { Modal } from "$lib/components";
+  import { Link, Modal } from "$lib/components";
   import type { TermsResult } from "$types/SearchAPI";
 
   let showModal = false;
@@ -58,7 +58,10 @@
 
   <ul>
     {#each matches as match}
-      <li>{match.title}</li>
+      <li>
+        <Link href={match.url}>{match.title}</Link>:
+        {match.tags.join(", ")}
+      </li>
     {/each}
 
     {#if value.length && !matches.length}
