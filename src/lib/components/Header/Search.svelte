@@ -25,7 +25,7 @@
   onMount(async () => {
     osKey = navigator.userAgent.includes("Mac") ? "⌘" : "CTRL";
 
-    // pull search terms post initial render to avoid blocking
+    // pull search terms after initial render to avoid blocking
     const response = await fetch("/search", {
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<button aria-label="Search, ⌘ K" on:click={() => (showModal = true)}>
+<button aria-label="Search" on:click={() => (showModal = true)}>
   {osKey} K
 </button>
 
