@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { fly } from "svelte/transition";
   import Search from "svelte-search";
 
   import { Link, Modal } from "$lib/components";
@@ -57,18 +58,18 @@
   <Search autofocus label="Search Titles and Tags" bind:value />
 
   <ul>
-    {#each matches as match}
-      <li>
-        <Link href={match.url}>{match.title}</Link>:
-        {match.tags.join(", ")}
-      </li>
-    {/each}
-
     {#if value.length && !matches.length}
       <li>No results</li>
     {:else if !value.length}
       <li>Enter a search</li>
     {/if}
+
+    {#each matches as match}
+      <li in:fly={{ duration: 200 }}>
+        <Link href={match.url}>{match.title}</Link>:
+        {match.tags.join(", ")}
+      </li>
+    {/each}
   </ul>
 </Modal>
 
