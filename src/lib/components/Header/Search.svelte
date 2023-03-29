@@ -11,38 +11,36 @@
   let terms: TermsResult[] = [];
 
   const focusNextAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
-    if (document.activeElement?.tagName !== "A") {
+    // if focus is not in the liat, or the focus is on the last item, focus the first anchor
+    if (
+      document.activeElement?.tagName !== "A" ||
+      document.activeElement === dialogAnchors[dialogAnchors.length - 1]
+    ) {
       (dialogAnchors[0] as HTMLElement).focus();
-      return;
-    }
-
-    for (let i = 0; i < dialogAnchors.length; i++) {
-      const anchor = dialogAnchors[i] as HTMLElement;
-      if (document.activeElement === anchor) {
-        if (i === dialogAnchors.length - 1) {
-          (dialogAnchors[0] as HTMLElement).focus();
-        } else {
+    } else {
+      // else, find the active anchor and focus the next one
+      for (let i = 0; i < dialogAnchors.length; i++) {
+        if (document.activeElement === dialogAnchors[i]) {
           (dialogAnchors[i + 1] as HTMLElement).focus();
+          break;
         }
-        break;
       }
     }
   };
   const focusPrevAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
-    if (document.activeElement?.tagName !== "A") {
+    // if focus is not in the liat, or the focus is on the first item, focus the last anchor
+    if (
+      document.activeElement?.tagName !== "A" ||
+      document.activeElement === dialogAnchors[0]
+    ) {
       (dialogAnchors[dialogAnchors.length - 1] as HTMLElement).focus();
-      return;
-    }
-
-    for (let i = 0; i < dialogAnchors.length; i++) {
-      const anchor = dialogAnchors[i] as HTMLElement;
-      if (document.activeElement === anchor) {
-        if (i === 0) {
-          (dialogAnchors[dialogAnchors.length - 1] as HTMLElement).focus();
-        } else {
+    } else {
+      // else, find the active anchor and focus the previous one
+      for (let i = 0; i < dialogAnchors.length; i++) {
+        if (document.activeElement === dialogAnchors[i]) {
           (dialogAnchors[i - 1] as HTMLElement).focus();
+          break;
         }
-        break;
       }
     }
   };
