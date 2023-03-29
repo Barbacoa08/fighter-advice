@@ -10,13 +10,69 @@
   let value = "";
   let terms: TermsResult[] = [];
 
-  let prevKey = "";
-  const handleKeydown = (event: { key: string }) => {
-    if (showModal) return;
+  const focusNextAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
+    if (document.activeElement?.tagName !== "A") {
+      (dialogAnchors[0] as HTMLElement).focus();
+      return;
+    }
 
-    if (event.key === "k" && (prevKey === "Control" || prevKey === "Meta")) {
+    for (let i = 0; i < dialogAnchors.length; i++) {
+      const anchor = dialogAnchors[i] as HTMLElement;
+      if (document.activeElement === anchor) {
+        if (i === dialogAnchors.length - 1) {
+          (dialogAnchors[0] as HTMLElement).focus();
+        } else {
+          (dialogAnchors[i + 1] as HTMLElement).focus();
+        }
+        break;
+      }
+    }
+  };
+  const focusPrevAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
+    if (document.activeElement?.tagName !== "A") {
+      (dialogAnchors[dialogAnchors.length - 1] as HTMLElement).focus();
+      return;
+    }
+
+    for (let i = 0; i < dialogAnchors.length; i++) {
+      const anchor = dialogAnchors[i] as HTMLElement;
+      if (document.activeElement === anchor) {
+        if (i === 0) {
+          (dialogAnchors[dialogAnchors.length - 1] as HTMLElement).focus();
+        } else {
+          (dialogAnchors[i - 1] as HTMLElement).focus();
+        }
+        break;
+      }
+    }
+  };
+
+  let prevKey = "";
+  const handleKeydown = (event: any) => {
+    if (
+      showModal &&
+      ["INPUT", "A"].includes(document.activeElement?.tagName || "")
+    ) {
+      const dialogAnchors = document.querySelectorAll("dialog ul li a");
+      if (!dialogAnchors.length) return;
+
+      if (event.key === "ArrowDown") {
+        focusNextAnchorTag(dialogAnchors);
+        event.stopPropagation();
+        event.preventDefault();
+      } else if (event.key === "ArrowUp") {
+        focusPrevAnchorTag(dialogAnchors);
+        event.stopPropagation();
+        event.preventDefault();
+      }
+    } else if (
+      event.key === "k" &&
+      (prevKey === "Control" || prevKey === "Meta")
+    ) {
       showModal = true;
       prevKey = "";
+      event.stopPropagation();
+      event.preventDefault();
     } else {
       prevKey = event.key;
     }
