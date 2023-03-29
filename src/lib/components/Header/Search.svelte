@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { fly } from "svelte/transition";
   import Search from "svelte-search";
 
   import { Link, Modal } from "$lib/components";
@@ -9,13 +10,69 @@
   let value = "";
   let terms: TermsResult[] = [];
 
-  let prevKey = "";
-  const handleKeydown = (event: { key: string }) => {
-    if (showModal) return;
+  // eslint-disable-next-line
+  const focusNextAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
+    // if focus is not in the liat, or the focus is on the last item, focus the first anchor
+    if (
+      document.activeElement?.tagName !== "A" ||
+      document.activeElement === dialogAnchors[dialogAnchors.length - 1]
+    ) {
+      (dialogAnchors[0] as HTMLElement).focus();
+    } else {
+      // else, find the active anchor and focus the next one
+      for (let i = 0; i < dialogAnchors.length; i++) {
+        if (document.activeElement === dialogAnchors[i]) {
+          (dialogAnchors[i + 1] as HTMLElement).focus();
+          break;
+        }
+      }
+    }
+  };
+  // eslint-disable-next-line
+  const focusPrevAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
+    // if focus is not in the liat, or the focus is on the first item, focus the last anchor
+    if (
+      document.activeElement?.tagName !== "A" ||
+      document.activeElement === dialogAnchors[0]
+    ) {
+      (dialogAnchors[dialogAnchors.length - 1] as HTMLElement).focus();
+    } else {
+      // else, find the active anchor and focus the previous one
+      for (let i = 0; i < dialogAnchors.length; i++) {
+        if (document.activeElement === dialogAnchors[i]) {
+          (dialogAnchors[i - 1] as HTMLElement).focus();
+          break;
+        }
+      }
+    }
+  };
 
-    if (event.key === "k" && (prevKey === "Control" || prevKey === "Meta")) {
+  let prevKey = "";
+  const handleKeydown = (event: KeyboardEvent) => {
+    if (
+      showModal &&
+      ["INPUT", "A"].includes(document.activeElement?.tagName || "")
+    ) {
+      const dialogAnchors = document.querySelectorAll("dialog ul li a");
+      if (!dialogAnchors.length) return;
+
+      if (event.key === "ArrowDown") {
+        focusNextAnchorTag(dialogAnchors);
+        event.stopPropagation();
+        event.preventDefault();
+      } else if (event.key === "ArrowUp") {
+        focusPrevAnchorTag(dialogAnchors);
+        event.stopPropagation();
+        event.preventDefault();
+      }
+    } else if (
+      event.key === "k" &&
+      (prevKey === "Control" || prevKey === "Meta")
+    ) {
       showModal = true;
       prevKey = "";
+      event.stopPropagation();
+      event.preventDefault();
     } else {
       prevKey = event.key;
     }
@@ -57,24 +114,39 @@
   <Search autofocus label="Search Titles and Tags" bind:value />
 
   <ul>
-    {#each matches as match}
-      <li>
-        <Link href={match.url}>{match.title}</Link>:
-        {match.tags.join(", ")}
-      </li>
-    {/each}
-
     {#if value.length && !matches.length}
       <li>No results</li>
     {:else if !value.length}
       <li>Enter a search</li>
     {/if}
+
+    {#each matches as match}
+      <li in:fly={{ duration: 200 }}>
+        <Link href={match.url}>{match.title}</Link>:
+        {match.tags.join(", ")}
+      </li>
+    {/each}
   </ul>
 </Modal>
 
 <style>
   h2 {
     margin-top: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul li {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    background-color: hsl(0, 1%, 25%);
+  }
+  ul li:hover {
+    background-color: hsl(0, 1%, 35%);
   }
 
   button {
