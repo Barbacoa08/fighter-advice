@@ -10,6 +10,7 @@
   let value = "";
   let terms: TermsResult[] = [];
 
+  // eslint-disable-next-line
   const focusNextAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
     // if focus is not in the liat, or the focus is on the last item, focus the first anchor
     if (
@@ -27,6 +28,7 @@
       }
     }
   };
+  // eslint-disable-next-line
   const focusPrevAnchorTag = (dialogAnchors: NodeListOf<Element>) => {
     // if focus is not in the liat, or the focus is on the first item, focus the last anchor
     if (
@@ -46,7 +48,7 @@
   };
 
   let prevKey = "";
-  const handleKeydown = (event: any) => {
+  const handleKeydown = (event: KeyboardEvent) => {
     if (
       showModal &&
       ["INPUT", "A"].includes(document.activeElement?.tagName || "")
