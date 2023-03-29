@@ -78,6 +78,21 @@
     margin-top: 0;
   }
 
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul li {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    background-color: hsl(0, 1%, 25%);
+  }
+  ul li:hover {
+    background-color: hsl(0, 1%, 35%);
+  }
+
   button {
     color: var(--color-link-text);
     background: none;
