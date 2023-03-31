@@ -9,6 +9,7 @@
     Notebook,
     People,
     Scale,
+    SearchIcon,
     Sleep,
     WordBubble,
   } from "$lib/icons";
@@ -36,6 +37,8 @@
   <Sleep class="svg-position" />
 {:else if icon === "word-bubble"}
   <WordBubble class="svg-position" />
+{:else if icon === "search"}
+  <SearchIcon class="svg-position" />
 {:else}
   <p>Unknown Icon: <code>{icon}</code></p>
 {/if}

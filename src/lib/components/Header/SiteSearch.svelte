@@ -3,8 +3,10 @@
   import { fly } from "svelte/transition";
   import Search from "svelte-search";
 
-  import { Link, Modal } from "$lib/components";
   import type { TermsResult } from "$types/SearchAPI";
+
+  import { Link, Modal } from "$lib/components";
+  import { SearchIcon } from "$lib/icons";
 
   let showModal = false;
   let value = "";
@@ -77,6 +79,11 @@
       prevKey = event.key;
     }
   };
+  const handleKeyUp = () => {
+    if (!showModal) {
+      prevKey = "";
+    }
+  };
 
   let osKey = " ";
   onMount(async () => {
@@ -102,10 +109,11 @@
         );
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} on:keyup={handleKeyUp} />
 
 <button aria-label="Search" on:click={() => (showModal = true)}>
-  {osKey} K
+  <SearchIcon width="1rem" height="1rem" />
+  <span>{osKey} K</span>
 </button>
 
 <Modal bind:showModal>
@@ -152,13 +160,25 @@
   button {
     color: var(--color-link-text);
     background: none;
-    border: 1px solid var(--color-link-text);
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--color-link-text);
     padding: 0.3rem 0.5rem;
     border-radius: 0.5rem;
   }
-  button::before {
-    content: "🔍";
-    margin-right: 0.5rem;
+  button > span {
+    padding-left: 0.25rem;
+  }
+
+  @media (max-width: 1080px) {
+    button {
+      transform: scale(1.15);
+    }
+    button > span {
+      display: none;
+    }
   }
 </style>
