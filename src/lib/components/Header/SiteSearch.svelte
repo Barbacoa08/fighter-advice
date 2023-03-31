@@ -79,6 +79,11 @@
       prevKey = event.key;
     }
   };
+  const handleKeyUp = () => {
+    if (!showModal) {
+      prevKey = "";
+    }
+  };
 
   let osKey = " ";
   onMount(async () => {
@@ -104,7 +109,7 @@
         );
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} on:keyup={handleKeyUp} />
 
 <button aria-label="Search" on:click={() => (showModal = true)}>
   <SearchIcon width="18px" height="18px" />
