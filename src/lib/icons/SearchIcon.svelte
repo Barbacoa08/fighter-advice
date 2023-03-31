@@ -28,10 +28,3 @@
     stroke-linejoin="round"
   />
 </svg>
-
-<style>
-  svg {
-    display: inline-block;
-    vertical-align: text-bottom;
-  }
-</style>

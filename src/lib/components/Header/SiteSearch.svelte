@@ -112,8 +112,8 @@
 <svelte:window on:keydown={handleKeydown} on:keyup={handleKeyUp} />
 
 <button aria-label="Search" on:click={() => (showModal = true)}>
-  <SearchIcon width="18px" height="18px" />
-  {osKey} K
+  <SearchIcon width="1rem" height="1rem" />
+  <span>{osKey} K</span>
 </button>
 
 <Modal bind:showModal>
@@ -160,9 +160,16 @@
   button {
     color: var(--color-link-text);
     background: none;
-    border: 1px solid var(--color-link-text);
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--color-link-text);
     padding: 0.3rem 0.5rem;
     border-radius: 0.5rem;
+  }
+  button > span {
+    padding-left: 0.25rem;
   }
 </style>
