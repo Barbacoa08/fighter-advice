@@ -172,4 +172,13 @@
   button > span {
     padding-left: 0.25rem;
   }
+
+  @media (max-width: 1080px) {
+    button {
+      transform: scale(1.15);
+    }
+    button > span {
+      display: none;
+    }
+  }
 </style>
