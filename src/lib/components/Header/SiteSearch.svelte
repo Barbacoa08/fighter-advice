@@ -3,8 +3,10 @@
   import { fly } from "svelte/transition";
   import Search from "svelte-search";
 
-  import { Link, Modal } from "$lib/components";
   import type { TermsResult } from "$types/SearchAPI";
+
+  import { Link, Modal } from "$lib/components";
+  import { SearchIcon } from "$lib/icons";
 
   let showModal = false;
   let value = "";
@@ -105,6 +107,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <button aria-label="Search" on:click={() => (showModal = true)}>
+  <SearchIcon width="18px" height="18px" />
   {osKey} K
 </button>
 
@@ -156,9 +159,5 @@
     cursor: pointer;
     padding: 0.3rem 0.5rem;
     border-radius: 0.5rem;
-  }
-  button::before {
-    content: "🔍";
-    margin-right: 0.5rem;
   }
 </style>

@@ -1,4 +1,5 @@
 // icons mostly built from: https://www.svgrepo.com/
+// and https://svelte-icons-kit.singhalankur.com/
 
 import Bowl from "./Bowl.svelte";
 export { Bowl };
@@ -23,6 +24,9 @@ export { People };
 
 import Scale from "./Scale.svelte";
 export { Scale };
+
+import SearchIcon from "./SearchIcon.svelte";
+export { SearchIcon };
 
 import Sleep from "./Sleep.svelte";
 export { Sleep };

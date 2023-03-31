@@ -2,7 +2,7 @@
   import { dev } from "$app/environment";
   import { page } from "$app/stores";
   import { Link, Logo } from "$lib/components";
-  import Search from "./Search.svelte";
+  import SiteSearch from "./SiteSearch.svelte";
 
   $: isHome = $page.url.pathname === "/";
 
@@ -45,7 +45,7 @@
     </li>
 
     <li>
-      <Search />
+      <SiteSearch />
     </li>
   </ul>
 </header>
