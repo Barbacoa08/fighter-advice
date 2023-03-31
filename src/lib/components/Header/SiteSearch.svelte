@@ -138,6 +138,18 @@
 </Modal>
 
 <style>
+  :root {
+    --list-item-background-color: hsl(0, 1%, 75%);
+    --list-item-background-color-hover: hsl(0, 1%, 65%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --list-item-background-color: hsl(0, 1%, 25%);
+      --list-item-background-color-hover: hsl(0, 1%, 35%);
+    }
+  }
+
   h2 {
     margin-top: 0;
   }
@@ -151,10 +163,10 @@
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 1rem;
-    background-color: hsl(0, 1%, 25%);
+    background-color: var(--list-item-background-color);
   }
   ul li:hover {
-    background-color: hsl(0, 1%, 35%);
+    background-color: var(--list-item-background-color-hover);
   }
 
   button {
