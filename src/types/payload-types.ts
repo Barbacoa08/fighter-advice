@@ -13,6 +13,7 @@ export interface Config {
     tags: Tag;
     topics: Topic;
     users: User;
+    program: Program;
   };
   // eslint-disable-next-line @typescript-eslint/ban-types
   globals: {};
@@ -80,4 +81,23 @@ export interface Topic {
   createdAt: string;
   updatedAt: string;
   publishedDate?: string;
+}
+export interface Program {
+  id: string;
+  slug?: string;
+  title?: string;
+  passcode?: string;
+  content?: PostContent[];
+  accordions?: {
+    accordionheader: string;
+    accordionItems: {
+      accordionitemheader?: string;
+      accordionitemcontent: PostContent[];
+      id?: string;
+    }[];
+    id?: string;
+  }[];
+  status?: "draft" | "published";
+  createdAt: string;
+  updatedAt: string;
 }
