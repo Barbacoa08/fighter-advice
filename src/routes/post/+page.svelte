@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Icon, TextGradient } from "$lib/components";
-  import { formatDate } from "$lib/utils/formatDate";
+  import { formatDate } from "$lib/utils";
+
   import type { PageData } from "../+layout.server";
 
   export let data: PageData;
