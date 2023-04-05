@@ -48,6 +48,21 @@
   <Serialize {accordions} {content} />
 {/if}
 
+{#if !form && !content.length}
+  <p class="top-spacing">
+    If you'd like to see a Program example, enter the following:
+  </p>
+
+  <ul>
+    <li>
+      <b>Title</b>: One Punch Man, Saitama Workout
+    </li>
+    <li>
+      <b>Passcode</b>: Saitama-is-my-hero
+    </li>
+  </ul>
+{/if}
+
 {#if form?.error}
   <h2>Error!</h2>
 
@@ -76,5 +91,9 @@
     background-color: var(--color-bg);
     color: var(--color-text);
     font-size: var(--font-size-base);
+  }
+
+  .top-spacing {
+    margin-top: 2rem;
   }
 </style>
