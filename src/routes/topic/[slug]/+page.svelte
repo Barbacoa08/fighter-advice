@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Serialize } from "$lib/cms-components";
   import { Icon, TextGradient } from "$lib/components";
-  import { formatDate } from "$lib/utils/formatDate";
+  import { formatDate } from "$lib/utils";
+
   import type { PageData } from "./$types";
 
   export let data: PageData;

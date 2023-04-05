@@ -8,6 +8,7 @@
 
   $: isAbout = $page.url.pathname.startsWith("/about");
   $: isPosts = $page.url.pathname.startsWith("/post");
+  $: isProgram = $page.url.pathname.startsWith("/program");
   $: isTopics = $page.url.pathname.startsWith("/topic");
 
   $: isMyStuff = $page.url.pathname === "/my-stuff";
@@ -31,6 +32,10 @@
 
     <li class:active={isPosts}>
       <a href="/post">Posts</a>
+    </li>
+
+    <li class:active={isProgram}>
+      <a href="/program">Programs</a>
     </li>
 
     {#if dev}
