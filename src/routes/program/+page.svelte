@@ -27,7 +27,7 @@
 
 <h1><TextGradient>Programs</TextGradient> <Icon icon="checklist" /></h1>
 
-{#if !form}
+{#if !form || !form.success}
   <p>
     If you have recieved a Program title and passcode from your coach, enter it
     below to access your program.

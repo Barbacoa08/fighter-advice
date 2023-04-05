@@ -31,9 +31,7 @@ export const actions = {
       program.status === "published"
     ) {
       return {
-        status: 200,
         success: true,
-        message: `Success retrieving Training Program "${title}"`,
         program,
       };
     } else {
