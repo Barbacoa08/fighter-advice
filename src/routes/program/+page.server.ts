@@ -21,16 +21,20 @@ export const actions = {
       return fail(404, { error: `Error retrieving Training Programs` });
     }
 
-    const programResult = result.docs.find(
-      (program: Program) =>
-        program.title.toLowerCase() === (title as string).toLowerCase()
+    const program: Program = result.docs.find(
+      (p: Program) => p.title.toLowerCase() === (title as string).toLowerCase()
     );
 
-    if (!!programResult && programResult.passcode === passcode) {
+    if (
+      !!program &&
+      program.passcode === passcode &&
+      program.status === "published"
+    ) {
       return {
         status: 200,
         success: true,
         message: `Success retrieving Training Program "${title}"`,
+        program,
       };
     } else {
       return fail(404, { error: `Program with title "${title}" not found` });
