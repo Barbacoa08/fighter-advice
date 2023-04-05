@@ -85,8 +85,8 @@ export interface Topic {
 export interface Program {
   id: string;
   slug?: string;
-  title?: string;
-  passcode?: string;
+  title: string;
+  passcode: string;
   content?: PostContent[];
   accordions?: {
     accordionheader: string;
@@ -97,7 +97,7 @@ export interface Program {
     }[];
     id?: string;
   }[];
-  status?: "draft" | "published";
+  status: "draft" | "published";
   createdAt: string;
   updatedAt: string;
 }
