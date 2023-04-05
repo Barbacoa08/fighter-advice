@@ -43,7 +43,7 @@
     <button type="submit">Retrieve Program</button>
   </form>
 {:else if form?.success && content.length}
-  <h2>{title}, updated at: {formatDate(updatedAt)}</h2>
+  <h2>{title}, updated: {formatDate(updatedAt)}</h2>
 
   <Serialize {accordions} {content} />
 {/if}
