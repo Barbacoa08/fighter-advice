@@ -47,7 +47,7 @@
   <Serialize {accordions} {content} />
 {/if}
 
-{#if !form && !content.length}
+{#if !content.length}
   <p class="top-spacing">
     If you'd like to see a Program example, enter the following:
   </p>
