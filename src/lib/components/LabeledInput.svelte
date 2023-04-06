@@ -2,7 +2,6 @@
   import { EyeOff, EyeOpen } from "$lib/icons";
 
   export let id: string = Math.random().toString(36).slice(-6);
-  export let name: string = id;
   export let type: "text" | "password";
 
   $: inputType = type;
@@ -14,7 +13,7 @@
 <label for={id}><slot /></label>
 
 <div class="wrapper">
-  <input type={inputType} {id} {name} {...$$restProps} />
+  <input type={inputType} {id} {...$$restProps} />
 
   {#if type === "password"}
     <button
