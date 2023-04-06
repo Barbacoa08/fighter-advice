@@ -2,7 +2,7 @@
   import { EyeOff, EyeOpen } from "$lib/icons";
 
   export let id: string = Math.random().toString(36).slice(-6);
-  export let type: "text" | "password";
+  export let type: "text" | "password" = "text";
 
   $: inputType = type;
   const handleVisibilityToggle = () => {
