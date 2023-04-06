@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Serialize } from "$lib/cms-components";
-  import { Icon, TextGradient } from "$lib/components";
+  import { Icon, LabeledInput, TextGradient } from "$lib/components";
   import { formatDate } from "$lib/utils";
 
   import type { ActionData } from "./$types";
@@ -34,11 +34,10 @@
   </p>
 
   <form method="POST">
-    <label for="title">Title:</label>
-    <input id="title" name="title" type="text" required />
-
-    <label for="passcode">Passcode:</label>
-    <input id="passcode" name="passcode" type="password" required />
+    <LabeledInput name="title" type="text" required>Title:</LabeledInput>
+    <LabeledInput name="passcode" type="password" required>
+      Passcode:
+    </LabeledInput>
 
     <button type="submit">Retrieve Program</button>
   </form>
@@ -74,15 +73,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  form label {
-    font-size: var(--font-size-base);
-  }
-  form input {
-    padding: 0.5rem;
-    border: 1px solid var(--color-bg);
-    border-radius: 0.5rem;
-    font-size: var(--font-size-base);
   }
   form button {
     padding: 0.5rem;
