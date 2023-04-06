@@ -8,6 +8,9 @@ export { CollectionError };
 import Icon from "./Icon.svelte";
 export { Icon };
 
+import LabeledInput from "./LabeledInput.svelte";
+export { LabeledInput };
+
 import Link from "./Link.svelte";
 export { Link };
 

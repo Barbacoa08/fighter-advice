@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Serialize } from "$lib/cms-components";
-  import { Icon, TextGradient } from "$lib/components";
+  import { LabeledInput, TextGradient } from "$lib/components";
+  import { Checklist } from "$lib/icons";
   import { formatDate } from "$lib/utils";
 
   import type { ActionData } from "./$types";
@@ -25,7 +26,10 @@
   <title>FA: Programs</title>
 </svelte:head>
 
-<h1><TextGradient>Programs</TextGradient> <Icon icon="checklist" /></h1>
+<h1>
+  <TextGradient>Programs</TextGradient>
+  <Checklist fill="#da62c4" />
+</h1>
 
 {#if !form || !form.success}
   <p>
@@ -34,11 +38,10 @@
   </p>
 
   <form method="POST">
-    <label for="title">Title:</label>
-    <input id="title" name="title" type="text" required />
-
-    <label for="passcode">Passcode:</label>
-    <input id="passcode" name="passcode" type="password" required />
+    <LabeledInput name="title" type="text" required>Title:</LabeledInput>
+    <LabeledInput name="passcode" type="password" required>
+      Passcode:
+    </LabeledInput>
 
     <button type="submit">Retrieve Program</button>
   </form>
@@ -48,7 +51,7 @@
   <Serialize {accordions} {content} />
 {/if}
 
-{#if !form && !content.length}
+{#if !content.length}
   <p class="top-spacing">
     If you'd like to see a Program example, enter the following:
   </p>
@@ -74,15 +77,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  form label {
-    font-size: var(--font-size-base);
-  }
-  form input {
-    padding: 0.5rem;
-    border: 1px solid var(--color-bg);
-    border-radius: 0.5rem;
-    font-size: var(--font-size-base);
   }
   form button {
     padding: 0.5rem;

@@ -10,6 +10,12 @@ export { CalendarHeart };
 import Checklist from "./Checklist.svelte";
 export { Checklist };
 
+import EyeOff from "./EyeOff.svelte";
+export { EyeOff };
+
+import EyeOpen from "./EyeOpen.svelte";
+export { EyeOpen };
+
 import Me from "./Me.svelte";
 export { Me };
 
