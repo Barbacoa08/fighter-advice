@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Serialize } from "$lib/cms-components";
-  import { Icon, LabeledInput, TextGradient } from "$lib/components";
+  import { LabeledInput, TextGradient } from "$lib/components";
+  import { Checklist } from "$lib/icons";
   import { formatDate } from "$lib/utils";
 
   import type { ActionData } from "./$types";
@@ -25,7 +26,10 @@
   <title>FA: Programs</title>
 </svelte:head>
 
-<h1><TextGradient>Programs</TextGradient> <Icon icon="checklist" /></h1>
+<h1>
+  <TextGradient>Programs</TextGradient>
+  <Checklist fill="#da62c4" />
+</h1>
 
 {#if !form || !form.success}
   <p>
