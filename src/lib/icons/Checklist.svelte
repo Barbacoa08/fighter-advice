@@ -5,7 +5,15 @@
   export let stroke = "none";
 </script>
 
-<svg {height} {width} {fill} {stroke} stroke-width="1.5" viewBox="0 0 16 16" {...$$restProps}>
+<svg
+  {height}
+  {width}
+  {fill}
+  {stroke}
+  stroke-width="1.5"
+  viewBox="0 0 16 16"
+  {...$$restProps}
+>
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"
