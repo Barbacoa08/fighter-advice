@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { toast } from "@zerodevx/svelte-toast";
   import { browser } from "$app/environment";
   import { copyTextToClipboard, formatDate } from "$lib/utils";
 
@@ -20,12 +21,9 @@
       });
     } else {
       copyTextToClipboard(url);
+      toast.push("Copied URL to clipboard");
     }
   };
 </script>
 
-{#if webShareAPISupported}
-  <button on:click={handleWebShare}>Share</button>
-{:else}
-  <button on:click={handleWebShare}>Copy URL to Clipboard</button>
-{/if}
+<button on:click={handleWebShare}>Share</button>
