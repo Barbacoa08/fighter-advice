@@ -1,3 +1,5 @@
+import { redirect } from "@sveltejs/kit";
+
 import { PAYLOAD_CMS_API_URL } from "$env/static/private";
 import { fail, type Actions } from "@sveltejs/kit";
 
@@ -30,10 +32,7 @@ export const actions = {
       program.passcode === passcode &&
       program.status === "published"
     ) {
-      return {
-        success: true,
-        program,
-      };
+      throw redirect(302, `/program/${program.id}`);
     } else {
       return fail(404, { error: `Program with title "${title}" not found` });
     }
