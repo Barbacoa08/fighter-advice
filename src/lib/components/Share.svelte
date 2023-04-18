@@ -1,7 +1,7 @@
 <script lang="ts">
   import { toast } from "@zerodevx/svelte-toast";
   import { browser } from "$app/environment";
-  import { copyTextToClipboard, formatDate } from "$lib/utils";
+  import { copyTextToClipboard } from "$lib/utils";
 
   export let title: string;
   export let url: string;
