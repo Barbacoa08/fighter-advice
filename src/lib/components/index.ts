@@ -20,5 +20,8 @@ export { Logo };
 import Modal from "./Modal.svelte";
 export { Modal };
 
+import Share from "./Share.svelte";
+export { Share };
+
 import TextGradient from "./TextGradient.svelte";
 export { TextGradient };
