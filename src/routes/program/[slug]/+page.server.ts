@@ -2,7 +2,7 @@ import { error } from "@sveltejs/kit";
 import { PAYLOAD_CMS_API_URL } from "$env/static/private";
 
 import type { Program } from "$types/payload-types";
-import type { PageServerLoad } from "../$types";
+import type { PageServerLoad } from "./$types";
 
 export interface PageData {
   program: Program;
