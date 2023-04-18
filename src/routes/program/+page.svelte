@@ -1,25 +1,10 @@
 <script lang="ts">
-  import { Serialize } from "$lib/cms-components";
   import { LabeledInput, TextGradient } from "$lib/components";
   import { Checklist } from "$lib/icons";
-  import { formatDate } from "$lib/utils";
 
   import type { ActionData } from "./$types";
 
-  export const empty = {
-    accordions: [],
-    content: [],
-    title: "",
-    updatedAt: "",
-  };
-
   export let form: ActionData;
-  $: ({
-    accordions = [],
-    content = [],
-    title,
-    updatedAt,
-  } = form?.program || empty);
 </script>
 
 <svelte:head>
@@ -31,40 +16,32 @@
   <Checklist fill="#da62c4" />
 </h1>
 
-{#if !form || !form.success}
-  <p>
-    If you have recieved a Program title and passcode from your coach, enter it
-    below to access your program.
-  </p>
+<p>
+  If you have recieved a Program title and passcode from your coach, enter it
+  below to access your program.
+</p>
 
-  <form method="POST">
-    <LabeledInput name="title" type="text" required>Title:</LabeledInput>
-    <LabeledInput name="passcode" type="password" required>
-      Passcode:
-    </LabeledInput>
+<form method="POST">
+  <LabeledInput name="title" type="text" required>Title:</LabeledInput>
+  <LabeledInput name="passcode" type="password" required>
+    Passcode:
+  </LabeledInput>
 
-    <button type="submit">Retrieve Program</button>
-  </form>
-{:else if form?.success && content.length}
-  <h2>{title}, updated: {formatDate(updatedAt)}</h2>
+  <button type="submit">Retrieve Program</button>
+</form>
 
-  <Serialize {accordions} {content} />
-{/if}
+<p class="top-spacing">
+  If you'd like to see a Program example, enter the following:
+</p>
 
-{#if !content.length}
-  <p class="top-spacing">
-    If you'd like to see a Program example, enter the following:
-  </p>
-
-  <ul>
-    <li>
-      <b>Title</b>: One Punch Man, Saitama Workout
-    </li>
-    <li>
-      <b>Passcode</b>: Saitama-is-my-hero
-    </li>
-  </ul>
-{/if}
+<ul>
+  <li>
+    <b>Title</b>: One Punch Man, Saitama Workout
+  </li>
+  <li>
+    <b>Passcode</b>: Saitama-is-my-hero
+  </li>
+</ul>
 
 {#if form?.error}
   <h2>Error!</h2>
