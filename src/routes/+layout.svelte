@@ -1,7 +1,13 @@
 <script lang="ts">
+  import { SvelteToast } from "@zerodevx/svelte-toast";
+
   import { Footer, Header } from "$lib/components";
 
   import "./global.css";
+
+  const options = {
+    duration: 2000,
+  };
 </script>
 
 <div class="body-main-wrapper">
@@ -13,6 +19,8 @@
 
   <Footer />
 </div>
+
+<SvelteToast {options} />
 
 <style>
   .body-main-wrapper {
