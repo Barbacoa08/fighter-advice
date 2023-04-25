@@ -5,6 +5,7 @@
   import type { ActionData } from "./$types";
 
   export let form: ActionData;
+  let submitting = false;
 </script>
 
 <svelte:head>
@@ -27,7 +28,14 @@
     Passcode:
   </LabeledInput>
 
-  <button type="submit">Retrieve Program</button>
+  <button
+    type="submit"
+    class:disabled={submitting}
+    on:click={() => (submitting = true)}
+    on:formdata={() => (submitting = false)}
+  >
+    Retrieve Program
+  </button>
 </form>
 
 <p class="top-spacing">
@@ -62,6 +70,9 @@
     background-color: var(--color-bg);
     color: var(--color-text);
     font-size: var(--font-size-base);
+  }
+  form button.disabled {
+    background-color: gray;
   }
 
   .top-spacing {
