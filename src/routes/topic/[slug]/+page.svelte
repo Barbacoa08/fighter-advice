@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { page } from "$app/stores";
   import { Serialize } from "$lib/cms-components";
-  import { Icon, TextGradient } from "$lib/components";
+  import { Icon, Share, TextGradient } from "$lib/components";
   import { formatDate } from "$lib/utils";
 
   import type { PageData } from "./$types";
 
   export let data: PageData;
   $: ({
-    topic: { accordions = [], content = [], title, icon, updatedAt },
+    topic: { accordions = [], content = [], title = "", icon, updatedAt, slug },
   } = data);
+  $: url = `${$page.url.origin}/topic/${slug}`;
 </script>
 
 <svelte:head>
@@ -16,25 +18,31 @@
   <meta name="description" content={`barbajoe's Fighter Advice on ${title}`} />
 </svelte:head>
 
-<h1>
+<h1 class="title">
   <TextGradient>
     {title}
   </TextGradient>
 
   <Icon icon={icon?.value} />
-
-  <span class="h1-subtitle">last updated: {formatDate(updatedAt)}</span>
 </h1>
+<p class="sub-title">
+  <span>Updated: {formatDate(updatedAt)}</span>
+  <span><Share {title} {url} /></span>
+</p>
 
 <Serialize {accordions} {content} />
 
 <style>
-  h1 span {
-    font-size: var(--font-size-base);
-    font-weight: normal;
-    vertical-align: middle;
+  .title {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color-gray);
   }
-  h1 span::before {
-    content: "— ";
+
+  .sub-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
   }
 </style>
