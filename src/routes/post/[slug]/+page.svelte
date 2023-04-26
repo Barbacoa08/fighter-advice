@@ -1,14 +1,23 @@
 <script lang="ts">
+  import { page } from "$app/stores";
   import { Serialize } from "$lib/cms-components";
-  import { Icon, TextGradient } from "$lib/components";
+  import { Icon, Share, TextGradient } from "$lib/components";
   import { formatDate } from "$lib/utils";
 
   import type { PageData } from "./$types";
 
   export let data: PageData;
   $: ({
-    post: { accordions = [], content = [], title, author, publishedDate },
+    post: {
+      accordions = [],
+      content = [],
+      title = "",
+      author,
+      publishedDate,
+      slug,
+    },
   } = data);
+  $: url = `${$page.url.origin}/post/${slug}`;
 </script>
 
 <svelte:head>
@@ -16,23 +25,31 @@
   <meta name="description" content={`barbajoe's Fighter Advice on ${title}`} />
 </svelte:head>
 
-<h1>
+<h1 class="title">
   <TextGradient>
     {title}
   </TextGradient>
 
   <Icon icon="word-bubble" /> by {author?.name}
-
-  <span>posted on: {formatDate(publishedDate)}</span>
 </h1>
+<p class="sub-title">
+  <span>posted on: {formatDate(publishedDate)}</span>
+  <span><Share {title} {url} /></span>
+</p>
 
 <Serialize {accordions} {content} />
 
 <style>
-  h1 span {
-    font-size: var(--font-size-base);
-    font-weight: normal;
+  .title {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color-gray);
+  }
+
+  .sub-title {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
   }
 </style>

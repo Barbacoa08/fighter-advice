@@ -31,7 +31,7 @@
 
 {#if content}
   <p class="share-section">
-    Want to share this page? <Share {title} {url} />
+    Want to share this program? <Share {title} {url} />
   </p>
 {/if}
 
