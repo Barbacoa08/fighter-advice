@@ -1,8 +1,8 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
 
-  import { LabeledInput, TextGradient } from "$lib/components";
-  import { Checklist } from "$lib/icons";
+  import { IconButton, LabeledInput, TextGradient } from "$lib/components";
+  import { Checklist, Trash } from "$lib/icons";
 
   import type { ActionData, PageData } from "./$types";
 
@@ -27,7 +27,20 @@
 
   <ul>
     {#each programs as program}
-      <li><a href={program.link}>{program.title}</a></li>
+      <li>
+        <a href={program.link}>{program.title}</a>
+
+        <form method="POST" action="?/delete">
+          <IconButton
+            type="submit"
+            name="title"
+            value={program.title}
+            aria-label="delete"
+          >
+            <Trash height="1rem" />
+          </IconButton>
+        </form>
+      </li>
     {/each}
   </ul>
 {/if}
@@ -37,7 +50,7 @@
   below to access your program.
 </p>
 
-<form method="POST">
+<form method="POST" action="?/find">
   <LabeledInput name="title" type="text" required>Title:</LabeledInput>
   <LabeledInput name="passcode" type="password" required>
     Passcode:
@@ -80,6 +93,13 @@
 {/if}
 
 <style>
+  h3 + ul li {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+  }
+
   form {
     display: flex;
     flex-direction: column;

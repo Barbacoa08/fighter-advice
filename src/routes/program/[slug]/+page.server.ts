@@ -2,7 +2,7 @@ import { error } from "@sveltejs/kit";
 import { PAYLOAD_CMS_API_URL } from "$env/static/private";
 
 import type { Program } from "$types/payload-types";
-import { cookieName } from "$lib/utils";
+import { cookieProgramName, cookieProgramOptions } from "$lib/utils";
 
 import type { PageServerLoad } from "./$types";
 import { KnownPrograms } from "../KnownPrograms";
@@ -21,9 +21,9 @@ export const load: PageServerLoad = async ({ cookies, fetch, params }) => {
     throw error(404, "Not found");
   }
 
-  const programs = new KnownPrograms(cookies.get(cookieName));
+  const programs = new KnownPrograms(cookies.get(cookieProgramName));
   programs.add(result.title, `/program/${result.id}`);
-  cookies.set(cookieName, programs.searialize());
+  cookies.set(cookieProgramName, programs.searialize(), cookieProgramOptions);
 
   return result;
 };

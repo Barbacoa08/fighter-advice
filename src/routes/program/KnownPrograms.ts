@@ -20,6 +20,10 @@ export class KnownPrograms {
     }
   }
 
+  remove(title: string) {
+    this.programs = this.programs.filter((p) => p.title !== title);
+  }
+
   searialize() {
     return JSON.stringify(this.programs);
   }
