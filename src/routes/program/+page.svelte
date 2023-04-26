@@ -4,7 +4,10 @@
   import { LabeledInput, TextGradient } from "$lib/components";
   import { Checklist } from "$lib/icons";
 
-  import type { ActionData } from "./$types";
+  import type { ActionData, PageData } from "./$types";
+
+  export let data: PageData;
+  $: ({ programs } = data);
 
   export let form: ActionData;
   let submitting = false;
@@ -18,6 +21,16 @@
   <TextGradient>Programs</TextGradient>
   <Checklist fill="#da62c4" />
 </h1>
+
+{#if programs.length}
+  <h3>Welcome back, here are the programs that you've recently visited:</h3>
+
+  <ul>
+    {#each programs as program}
+      <li><a href={program.link}>{program.title}</a></li>
+    {/each}
+  </ul>
+{/if}
 
 <p>
   If you have recieved a Program title and passcode from your coach, enter it
@@ -45,23 +58,25 @@
   {/if}
 </form>
 
-<p class="top-spacing">
-  If you'd like to see a Program example, enter the following:
-</p>
-
-<ul>
-  <li>
-    <b>Title</b>: One Punch Man, Saitama Workout
-  </li>
-  <li>
-    <b>Passcode</b>: Saitama-is-my-hero
-  </li>
-</ul>
-
 {#if form?.error}
   <h2>Error!</h2>
 
   <p>Message: {form.error}</p>
+{/if}
+
+{#if programs.length < 2}
+  <p class="top-spacing">
+    If you'd like to see a Program example, enter the following:
+  </p>
+
+  <ul>
+    <li>
+      <b>Title</b>: One Punch Man, Saitama Workout
+    </li>
+    <li>
+      <b>Passcode</b>: Saitama-is-my-hero
+    </li>
+  </ul>
 {/if}
 
 <style>

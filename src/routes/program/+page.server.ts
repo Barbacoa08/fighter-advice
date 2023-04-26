@@ -1,12 +1,22 @@
 import { redirect } from "@sveltejs/kit";
 
 import { PAYLOAD_CMS_API_URL } from "$env/static/private";
-import { fail, type Actions } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 
 import type { Program } from "$types/payload-types";
+import type { PageServerLoad, Actions } from "./$types";
+import { KnownPrograms } from "./KnownPrograms";
+
+const cookieName = "fighter-advice-program";
+
+export const load = (({ cookies }) => {
+  const data = new KnownPrograms(cookies.get(cookieName));
+
+  return { programs: data.programs };
+}) satisfies PageServerLoad;
 
 export const actions = {
-  default: async ({ request, fetch }) => {
+  default: async ({ cookies, fetch, request }) => {
     const data = await request.formData();
     const title = data.get("title");
     const passcode = data.get("passcode");
@@ -32,7 +42,11 @@ export const actions = {
       program.passcode === passcode &&
       program.status === "published"
     ) {
-      throw redirect(302, `/program/${program.id}`);
+      const programs = new KnownPrograms(cookies.get(cookieName));
+      const link = `/program/${program.id}`;
+      programs.add(program.title, link);
+      cookies.set(cookieName, programs.searialize());
+      throw redirect(302, link);
     } else {
       return fail(404, { error: `Program with title "${title}" not found` });
     }
