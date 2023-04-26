@@ -6,13 +6,13 @@
 </script>
 
 <svg
-  xmlns="http://www.w3.org/2000/svg"
   {height}
   {width}
   {fill}
   {stroke}
   stroke-width="1.5"
   viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
   {...$$restProps}
 >
   <path
