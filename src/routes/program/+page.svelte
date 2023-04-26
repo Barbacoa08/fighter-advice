@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
+
   import { LabeledInput, TextGradient } from "$lib/components";
   import { Checklist } from "$lib/icons";
 
@@ -36,6 +38,11 @@
   >
     Retrieve Program
   </button>
+  {#if submitting}
+    <button type="button" transition:fade={{ duration: 200 }} disabled>
+      Retrieving Program...
+    </button>
+  {/if}
 </form>
 
 <p class="top-spacing">
@@ -71,9 +78,15 @@
     color: var(--color-text);
     font-size: var(--font-size-base);
   }
-  form button.disabled {
+  form button:disabled {
     background-color: gray;
   }
+  form button.disabled {
+    display: none;
+  }
+  /* HACK: the above button weirdness is because I don't feel like putting effort
+  into a "disable form while submitting". It's hacky for sure, but it works as expected
+  and looks decent. Good enough. */
 
   .top-spacing {
     margin-top: 2rem;
