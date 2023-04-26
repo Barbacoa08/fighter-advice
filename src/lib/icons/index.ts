@@ -37,5 +37,8 @@ export { SearchIcon };
 import Sleep from "./Sleep.svelte";
 export { Sleep };
 
+import Trash from "./Trash.svelte";
+export { Trash };
+
 import WordBubble from "./WordBubble.svelte";
 export { WordBubble };
