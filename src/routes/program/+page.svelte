@@ -1,10 +1,13 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
 
-  import { LabeledInput, TextGradient } from "$lib/components";
-  import { Checklist } from "$lib/icons";
+  import { IconButton, LabeledInput, TextGradient } from "$lib/components";
+  import { Checklist, Trash } from "$lib/icons";
 
-  import type { ActionData } from "./$types";
+  import type { ActionData, PageData } from "./$types";
+
+  export let data: PageData;
+  $: ({ programs } = data);
 
   export let form: ActionData;
   let submitting = false;
@@ -19,12 +22,35 @@
   <Checklist fill="#da62c4" />
 </h1>
 
+{#if programs.length}
+  <h3>Welcome back, here are the programs that you've recently visited:</h3>
+
+  <ul>
+    {#each programs as program}
+      <li>
+        <a href={program.link}>{program.title}</a>
+
+        <form method="POST" action="?/delete">
+          <IconButton
+            type="submit"
+            name="title"
+            value={program.title}
+            aria-label="delete"
+          >
+            <Trash height="1rem" />
+          </IconButton>
+        </form>
+      </li>
+    {/each}
+  </ul>
+{/if}
+
 <p>
   If you have recieved a Program title and passcode from your coach, enter it
   below to access your program.
 </p>
 
-<form method="POST">
+<form method="POST" action="?/find">
   <LabeledInput name="title" type="text" required>Title:</LabeledInput>
   <LabeledInput name="passcode" type="password" required>
     Passcode:
@@ -45,26 +71,35 @@
   {/if}
 </form>
 
-<p class="top-spacing">
-  If you'd like to see a Program example, enter the following:
-</p>
-
-<ul>
-  <li>
-    <b>Title</b>: One Punch Man, Saitama Workout
-  </li>
-  <li>
-    <b>Passcode</b>: Saitama-is-my-hero
-  </li>
-</ul>
-
 {#if form?.error}
   <h2>Error!</h2>
 
   <p>Message: {form.error}</p>
 {/if}
 
+{#if programs.length < 2}
+  <p class="top-spacing">
+    If you'd like to see a Program example, enter the following:
+  </p>
+
+  <ul>
+    <li>
+      <b>Title</b>: One Punch Man, Saitama Workout
+    </li>
+    <li>
+      <b>Passcode</b>: Saitama-is-my-hero
+    </li>
+  </ul>
+{/if}
+
 <style>
+  h3 + ul li {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+  }
+
   form {
     display: flex;
     flex-direction: column;

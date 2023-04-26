@@ -10,4 +10,5 @@ export type Icons =
   | "people"
   | "scale"
   | "sleep"
+  | "trash"
   | "word-bubble";
