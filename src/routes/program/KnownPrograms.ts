@@ -15,7 +15,9 @@ export class KnownPrograms {
   }
 
   add(title: string, link: string) {
-    this.programs.push({ title, link });
+    if (!this.programs.find((p) => p.title === title)) {
+      this.programs.push({ title, link });
+    }
   }
 
   searialize() {

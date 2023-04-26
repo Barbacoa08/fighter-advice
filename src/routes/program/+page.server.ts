@@ -1,13 +1,12 @@
 import { redirect } from "@sveltejs/kit";
-
-import { PAYLOAD_CMS_API_URL } from "$env/static/private";
 import { fail } from "@sveltejs/kit";
+import { PAYLOAD_CMS_API_URL } from "$env/static/private";
 
 import type { Program } from "$types/payload-types";
+import { cookieName } from "$lib/utils";
+
 import type { PageServerLoad, Actions } from "./$types";
 import { KnownPrograms } from "./KnownPrograms";
-
-const cookieName = "fighter-advice-program";
 
 export const load = (({ cookies }) => {
   const data = new KnownPrograms(cookies.get(cookieName));
