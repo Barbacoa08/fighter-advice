@@ -17,6 +17,10 @@ export const load: PageServerLoad = async ({ cookies, fetch, params }) => {
       throw error(404, "Not found");
     });
 
+  if (!result || !result.id) {
+    throw error(404, "Not found");
+  }
+
   const programs = new KnownPrograms(cookies.get(cookieName));
   programs.add(result.title, `/program/${result.id}`);
   cookies.set(cookieName, programs.searialize());
