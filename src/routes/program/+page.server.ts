@@ -41,11 +41,7 @@ export const actions = {
       program.passcode === passcode &&
       program.status === "published"
     ) {
-      const programs = new KnownPrograms(cookies.get(cookieName));
-      const link = `/program/${program.id}`;
-      programs.add(program.title, link);
-      cookies.set(cookieName, programs.searialize());
-      throw redirect(302, link);
+      throw redirect(302, `/program/${program.id}`);
     } else {
       return fail(404, { error: `Program with title "${title}" not found` });
     }
