@@ -20,7 +20,7 @@ jobs:
         with:
           site_name: "barbajoe-fighter-advice"
       - name: Audit core URLs on DP
-        uses: treosh/lighthouse-ci-action@v9
+        uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
             ${{ steps.netlify.outputs.url }}
