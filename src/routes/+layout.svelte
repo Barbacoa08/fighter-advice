@@ -14,6 +14,7 @@
   <Header />
 
   <main id="main-content">
+    <p>poing</p>
     <slot />
   </main>
 
