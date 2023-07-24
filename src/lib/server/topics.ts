@@ -20,7 +20,7 @@ export const getTopics = async (fetch: Fetch) => {
 
 export const getTopic = async (fetch: Fetch, slug: string) => {
   const data = await fetch(
-    `${PAYLOAD_CMS_API_URL}topics/?where[slug][equals]=${slug}`
+    `${PAYLOAD_CMS_API_URL}topics/?where[slug][equals]=${slug}`,
   ).then(async (res) => await res.json());
 
   if (!data || data.totalDocs !== 1) {

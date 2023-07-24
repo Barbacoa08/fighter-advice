@@ -1,4 +1,4 @@
 export type Fetch = (
   input: RequestInfo | URL,
-  init?: RequestInit | undefined
+  init?: RequestInit | undefined,
 ) => Promise<Response>;
