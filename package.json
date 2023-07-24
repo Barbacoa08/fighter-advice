@@ -28,6 +28,8 @@
     "format": "prettier --write . --log-level warn"
   },
   "devDependencies": {
+    "@barbajoe/css-lib": "0.1.5",
+    "@barbajoe/svelte-lib": "0.2.4",
     "@sveltejs/adapter-netlify": "2.0.8",
     "@sveltejs/kit": "1.22.3",
     "@typescript-eslint/eslint-plugin": "6.2.0",
