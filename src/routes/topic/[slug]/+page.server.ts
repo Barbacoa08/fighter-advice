@@ -10,4 +10,4 @@ export interface PageData {
 export const load: PageServerLoad = async ({ fetch, params }) =>
   ({
     topic: await getTopic(fetch, params.slug),
-  } satisfies PageData);
+  }) satisfies PageData;

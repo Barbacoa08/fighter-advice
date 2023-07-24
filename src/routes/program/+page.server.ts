@@ -33,7 +33,7 @@ export const actions = {
     }
 
     const program: Program = result.docs.find(
-      (p: Program) => p.title.toLowerCase() === (title as string).toLowerCase()
+      (p: Program) => p.title.toLowerCase() === (title as string).toLowerCase(),
     );
 
     if (
