@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@barbajoe/css-lib':
+    specifier: 0.1.5
+    version: 0.1.5
+  '@barbajoe/svelte-lib':
+    specifier: 0.2.4
+    version: 0.2.4(@barbajoe/css-lib@0.1.5)(svelte@4.1.1)
   '@sveltejs/adapter-netlify':
     specifier: 2.0.8
     version: 2.0.8(@sveltejs/kit@1.22.3)
@@ -70,6 +76,20 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
+    dev: true
+
+  /@barbajoe/css-lib@0.1.5:
+    resolution: {integrity: sha512-EbL5dmFv7V4qovutxuv7Ou8wf+hCXsJ9kZoXseFcknR3uYSIVSAFMC24KWv3MNEzM1FSGlsBJLkl0Ej1zHXXlw==}
+    dev: true
+
+  /@barbajoe/svelte-lib@0.2.4(@barbajoe/css-lib@0.1.5)(svelte@4.1.1):
+    resolution: {integrity: sha512-lXzlaNYny+254KX+1KMW5V5KqvoAlzMPXFK+oEGzXcNwsm2oJaCHzjeWkHtrUl6sDVpweyW51YToenw8EYq58w==}
+    peerDependencies:
+      '@barbajoe/css-lib': '*'
+      svelte: ^4
+    dependencies:
+      '@barbajoe/css-lib': 0.1.5
+      svelte: 4.1.1
     dev: true
 
   /@esbuild/android-arm64@0.18.11:

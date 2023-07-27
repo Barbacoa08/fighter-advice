@@ -1,5 +1,4 @@
 export * from "./Accordion";
-export * from "./Footer";
 export * from "./Header";
 
 import CollectionError from "./CollectionError.svelte";
