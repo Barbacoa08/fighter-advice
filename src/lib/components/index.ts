@@ -19,9 +19,6 @@ export { Link };
 import Logo from "./Logo.svelte";
 export { Logo };
 
-import Modal from "./Modal.svelte";
-export { Modal };
-
 import Share from "./Share.svelte";
 export { Share };
 

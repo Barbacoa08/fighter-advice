@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { Modal } from "@barbajoe/svelte-lib";
   import { onMount } from "svelte";
   import { fly } from "svelte/transition";
   import Search from "svelte-search";
 
   import type { TermsResult } from "$types/SearchAPI";
 
-  import { Link, Modal } from "$lib/components";
+  import { Link } from "$lib/components";
   import { SearchIcon } from "$lib/icons";
 
   let showModal = false;
@@ -104,8 +105,8 @@
           (term) =>
             term.title.toLowerCase().includes(value.toLowerCase()) ||
             term.tags.filter((tag) =>
-              tag.toLowerCase().includes(value.toLowerCase())
-            ).length
+              tag.toLowerCase().includes(value.toLowerCase()),
+            ).length,
         );
 </script>
 
@@ -117,7 +118,9 @@
 </button>
 
 <Modal bind:showModal>
-  <h2 slot="header">Topic + Post Search</h2>
+  <svelte:fragment slot="dialog-header-text">
+    Topic + Post Search
+  </svelte:fragment>
 
   <Search autofocus label="Search Titles and Tags" bind:value />
 
@@ -148,10 +151,6 @@
       --list-item-background-color: hsl(0, 1%, 25%);
       --list-item-background-color-hover: hsl(0, 1%, 35%);
     }
-  }
-
-  h2 {
-    margin-top: 0;
   }
 
   ul {
