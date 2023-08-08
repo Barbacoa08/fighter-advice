@@ -28,12 +28,12 @@
     "format": "prettier --write . --log-level warn"
   },
   "devDependencies": {
-    "@barbajoe/css-lib": "0.1.6",
+    "@barbajoe/css-lib": "0.1.8",
     "@barbajoe/svelte-lib": "0.2.6",
     "@sveltejs/adapter-netlify": "2.0.8",
     "@sveltejs/kit": "1.22.4",
-    "@typescript-eslint/eslint-plugin": "6.2.1",
-    "@typescript-eslint/parser": "6.2.1",
+    "@typescript-eslint/eslint-plugin": "6.3.0",
+    "@typescript-eslint/parser": "6.3.0",
     "@zerodevx/svelte-toast": "0.9.5",
     "eslint": "8.46.0",
     "eslint-config-prettier": "9.0.0",
@@ -45,7 +45,7 @@
     "svelte-search": "2.0.1",
     "tslib": "2.6.1",
     "typescript": "5.1.6",
-    "vite": "4.4.8",
+    "vite": "4.4.9",
     "vitest": "0.34.1"
   }
 }
