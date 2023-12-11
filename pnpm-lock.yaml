@@ -13,10 +13,10 @@ devDependencies:
     version: 0.2.6(@barbajoe/css-lib@0.1.8)(svelte@4.2.8)
   '@sveltejs/adapter-netlify':
     specifier: 2.0.8
-    version: 2.0.8(@sveltejs/kit@1.27.7)
+    version: 2.0.8(@sveltejs/kit@1.28.0)
   '@sveltejs/kit':
-    specifier: 1.27.7
-    version: 1.27.7(svelte@4.2.8)(vite@4.5.0)
+    specifier: 1.28.0
+    version: 1.28.0(svelte@4.2.8)(vite@4.5.0)
   '@typescript-eslint/eslint-plugin':
     specifier: 6.13.2
     version: 6.13.2(@typescript-eslint/parser@6.13.2)(eslint@8.55.0)(typescript@5.3.3)
@@ -36,11 +36,11 @@ devDependencies:
     specifier: 2.35.1
     version: 2.35.1(eslint@8.55.0)(svelte@4.2.8)
   prettier:
-    specifier: 3.1.0
-    version: 3.1.0
+    specifier: 3.1.1
+    version: 3.1.1
   prettier-plugin-svelte:
     specifier: 3.1.2
-    version: 3.1.2(prettier@3.1.0)(svelte@4.2.8)
+    version: 3.1.2(prettier@3.1.1)(svelte@4.2.8)
   svelte:
     specifier: 4.2.8
     version: 4.2.8
@@ -48,8 +48,8 @@ devDependencies:
     specifier: 3.6.2
     version: 3.6.2(postcss@8.4.28)(svelte@4.2.8)
   svelte-search:
-    specifier: 2.0.1
-    version: 2.0.1
+    specifier: 2.0.2
+    version: 2.0.2
   tslib:
     specifier: 2.6.2
     version: 2.6.2
@@ -426,19 +426,19 @@ packages:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
 
-  /@sveltejs/adapter-netlify@2.0.8(@sveltejs/kit@1.27.7):
+  /@sveltejs/adapter-netlify@2.0.8(@sveltejs/kit@1.28.0):
     resolution: {integrity: sha512-kfsoSsZth5CZHEIjr4TL4Cb6NmVul7/XNu5rJ04EbIOjYD1bnA4U7Sk1BmoRVyJae7UtUwG6Gkh01RFQSaIeNQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
       '@iarna/toml': 2.2.5
-      '@sveltejs/kit': 1.27.7(svelte@4.2.8)(vite@4.5.0)
+      '@sveltejs/kit': 1.28.0(svelte@4.2.8)(vite@4.5.0)
       esbuild: 0.18.11
       set-cookie-parser: 2.6.0
     dev: true
 
-  /@sveltejs/kit@1.27.7(svelte@4.2.8)(vite@4.5.0):
-    resolution: {integrity: sha512-AzXYDoYt42clCBwLF9GTHsXyg2DFR31Ncyt8yxu8Aw4tgB433V+w+hcr1RTfAN9zKW2J2PY9FMQ8FoX/4Vw8CA==}
+  /@sveltejs/kit@1.28.0(svelte@4.2.8)(vite@4.5.0):
+    resolution: {integrity: sha512-T9hoS6XM840W4ZUgf3kKAoBt2dsupumUxBtlxt3ddu2yRLrqsKcC3gledBB/e5NtTC8zEZyR5qWBNFT9WAWmIA==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -1716,18 +1716,18 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte@3.1.2(prettier@3.1.0)(svelte@4.2.8):
+  /prettier-plugin-svelte@3.1.2(prettier@3.1.1)(svelte@4.2.8):
     resolution: {integrity: sha512-7xfMZtwgAWHMT0iZc8jN4o65zgbAQ3+O32V6W7pXrqNvKnHnkoyQCGCbKeUyXKZLbYE0YhFRnamfxfkEGxm8qA==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
     dependencies:
-      prettier: 3.1.0
+      prettier: 3.1.1
       svelte: 4.2.8
     dev: true
 
-  /prettier@3.1.0:
-    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
+  /prettier@3.1.1:
+    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -2013,8 +2013,8 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /svelte-search@2.0.1:
-    resolution: {integrity: sha512-JBoObru/BUk86EmuRtYBa99xnH1RB8jqDuYYJHH0PUzN9BINo1+1GZataC/m5368BG3kZRb3wZI5ztjoi1WWXg==}
+  /svelte-search@2.0.2:
+    resolution: {integrity: sha512-r5uo9VdumhonddVBXHpi+MvQUz8Bble6RlLWehpz+ZuAm1jyxJiZaFvFxcPZKrbrT6GmeZlmbFbep3HbEg4OOQ==}
     dev: true
 
   /svelte@4.2.8:
