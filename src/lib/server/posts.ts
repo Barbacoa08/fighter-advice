@@ -8,13 +8,18 @@ export const getPosts = async (fetch: Fetch) => {
   const postsResult = await fetch(`${PAYLOAD_CMS_API_URL}posts`);
   const postsData: { docs: Post[] } = await postsResult.json();
   const posts = postsData.docs
-    .filter((post) => !!post.status)
+    .filter(
+      (post) =>
+        !!post.status &&
+        !post.tags?.some((tag) => tag?.name?.toLowerCase().startsWith("tech:")),
+    )
     .sort((a, b) => {
       return (
         new Date(b.publishedDate || 0).getTime() -
         new Date(a.publishedDate || 0).getTime()
       );
     });
+
   return posts;
 };
 
